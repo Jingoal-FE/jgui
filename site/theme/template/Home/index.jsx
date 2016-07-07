@@ -105,12 +105,7 @@ export default class Home extends React.Component {
       <DocumentTitle title="JGUI">
         <Layout {...this.props}>
           <div className="main-wrapper">
-            <Link />
             <Banner />
-            <Page1 />
-            <Page2 />
-            <Page3 />
-            <Page4 />
             <style dangerouslySetInnerHTML={{ __html: this.getStyle() }} />
           </div>
         </Layout>

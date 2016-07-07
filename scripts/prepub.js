@@ -8,7 +8,7 @@ var fs = require('fs');
 var path = require('path');
 
 if(fs.existsSync(path.join(__dirname,'../dist'))) {
-  console.log('Building a entry less file to dist/jgui.scss');
+  console.log('Building a entry scss file to dist/jgui.scss');
   var componentsPath = path.join(process.cwd(), 'components');
   var componentsLessContent = '';
 
