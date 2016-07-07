@@ -10,7 +10,7 @@ export default class IconSet extends React.Component {
   render() {
     const className = this.props.className;
     const listClassName = classNames({
-      'anticons-list': true,
+      'jgicon-list': true,
       clearfix: true,
       [className]: !!className,
     });

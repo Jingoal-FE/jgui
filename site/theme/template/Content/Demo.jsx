@@ -76,7 +76,7 @@ export default class Demo extends React.Component {
             </a>
           </div>
           {introChildren}
-          <span className="collapse anticon anticon-circle-o-right"
+          <span className="collapse jgicon jgicon-circle-o-right"
             onClick={this.handleCodeExapnd}
             unselectable="none"
           />
