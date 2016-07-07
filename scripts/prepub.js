@@ -8,7 +8,7 @@ var fs = require('fs');
 var path = require('path');
 
 if(fs.existsSync(path.join(__dirname,'../dist'))) {
-  console.log('Building a entry less file to dist/antd.scss');
+  console.log('Building a entry less file to dist/jgui.scss');
   var componentsPath = path.join(process.cwd(), 'components');
   var componentsLessContent = '';
 
@@ -21,9 +21,9 @@ if(fs.existsSync(path.join(__dirname,'../dist'))) {
     });
     fs.writeFileSync(path.join(process.cwd(), 'lib', 'style', 'components.scss'), componentsLessContent);
 
-    // Build less entry file: dist/antd.scss
+    // Build less entry file: dist/jgui.scss
     fs.writeFileSync(
-      path.join(process.cwd(), 'dist', 'antd.scss'),
+      path.join(process.cwd(), 'dist', 'jgui.scss'),
       '@import "../lib/style/index.scss";\n@import "../lib/style/components.scss";'
     );
   });
