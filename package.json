@@ -1,6 +1,6 @@
 {
   "name": "jgui",
-  "version": "0.0.1-beta2",
+  "version": "0.0.1-beta3",
   "keywords": [
     "react",
     "react-component",
@@ -114,7 +114,6 @@
     "react-sublime-video": "^0.2.0",
     "reqwest": "^2.0.5",
     "rucksack-css": "^0.8.6",
-    "sass-loader": "^4.0.0",
     "through2": "^2.0.1",
     "values.js": "^1.0.3",
     "webpack-babel-jest": "^1.0.4"
@@ -131,9 +130,7 @@
     "lint": "npm run srclint && npm run demolint && npm run lesshint",
     "srclint": "RUN_ENV=SRC eslint test site scripts ./*.js --ext '.js,.jsx'",
     "demolint": "RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'",
-    "eslint-fix": "eslint --fix components test site scripts ./*.js --ext '.js,.jsx' && eslint-tinker ./components/*/demo/*.md"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+    "eslint-fix": "eslint --fix components test site scripts ./*.js --ext '.js,.jsx' && eslint-tinker ./components/*/demo/*.md",
+    "pre-publish": "node ./scripts/prepub"
+  }
 }
