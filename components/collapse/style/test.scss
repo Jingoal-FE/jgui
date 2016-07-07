@@ -1,0 +1,6 @@
+@import "../../style/themes/default";
+@import "../../style/mixins/index";
+
+.test {
+  @include ie-rotate-via-degrees(30deg);
+}

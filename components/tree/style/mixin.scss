@@ -1,0 +1,17 @@
+@import "../../style/mixins/index";
+
+@mixin jguiTreeSwitcherIcon() {
+  position: relative;
+  &:after {
+    @include iconfont-size-under-12px(6px);
+    content: '\e611';
+    display: inline-block;
+    font-family: 'jgicon';
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    color: #666;
+    transition: transform .3s ease;
+  }
+}
