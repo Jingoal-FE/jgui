@@ -22,6 +22,8 @@ module.exports = {
         plugins: ['dora-plugin-upload'],
     },
     webpackConfig(config) {
+        config.devtool = "source-map";
+
         config.resolve.alias = {
             jgui: process.cwd(),
             site: path.join(process.cwd(), 'site'),
@@ -61,6 +63,7 @@ module.exports = {
         ]);
 
         config.plugins.push(new ExtractTextPlugin("style.css"));
+        console.log(JSON.stringify(config));
         return config;
     },
 };
