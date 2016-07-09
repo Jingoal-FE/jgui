@@ -3,7 +3,7 @@ const fs = require('fs');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    port: 8001,
+    port: 8000,
     source: [
         './components',
         './docs'
@@ -63,7 +63,7 @@ module.exports = {
         ]);
 
         config.plugins.push(new ExtractTextPlugin("style.css"));
-        console.log(JSON.stringify(config));
+
         return config;
     },
 };

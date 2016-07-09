@@ -2,11 +2,12 @@
 
 $ui-prefixCls           : jgui;
 // Color
-$primary-color          : #2db7f5;
+$primary-color          : #24a4ff;
+$primary-dark-color     : #6d6f73;
 $info-color             : #2db7f5;
 $success-color          : #87d068;
-$error-color            : #f50;
-$warning-color          : #fa0;
+$error-color            : #ff5252;
+$warning-color          : #ffa852;
 
 // ------ Base & Require ------
 $body-background        : #fff;
@@ -17,12 +18,12 @@ $text-color             : #666;
 $font-size-base         : 12px;
 $line-height-base       : 1.5;
 $line-height-computed   : floor(($font-size-base * $line-height-base));
-$border-radius-base     : 6px;
-$border-radius-sm       : 4px;
+$border-radius-base     : 0;
+$border-radius-sm       : 0;
 
 // ICONFONT
 $iconfont-css-prefix    : jgicon;
-$icon-url               : "https://at.alicdn.com/t/font_1463992151_360388";
+$icon-url               : "https://raw.githubusercontent.com/Jingoal-FE/jgui/master/vendors/fonts/icomoon";
 
 // LINK
 $link-color             : #2db7f5;
@@ -48,7 +49,7 @@ $ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
 $ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
 
 // Border color
-$border-color-base      : #d9d9d9;        // base border outline a component
+$border-color-base      : #cccccc;        // base border outline a component
 $border-color-split     : #e9e9e9;        // split border inside a component
 
 // Shadow
@@ -143,7 +144,7 @@ $label-color                 : $text-color;
 // Input
 $input-height-base: 28px;
 $input-height-lg: 32px;
-$input-height-sm: 22px;
+$input-height-sm: 24px;
 
 $input-padding-horizontal    : 7px;
 $input-padding-vertical-base : 4px;

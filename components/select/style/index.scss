@@ -178,13 +178,13 @@ $select-prefix-cls: jgui-select;
       border-radius: $border-radius-sm;
     }
     .jgui-select-selection--single {
-      height: 22px;
+      height: 24px;
       .jgui-select-selection__rendered {
         line-height: 20px;
       }
     }
     .jgui-select-selection--multiple {
-      min-height: 22px;
+      min-height: 24px;
       .jgui-select-selection__rendered {
         li {
           height: 14px;

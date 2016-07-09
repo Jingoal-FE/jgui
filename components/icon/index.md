@@ -67,12 +67,12 @@ ReactDOM.render(<IconSet className="icons" icons={icons3} key="icons3" />, mount
 .markdown .icons {
   width: 100%;
 }
-ul.jgicons-list {
+ul.jgicon-list {
   margin: 20px 0;
   list-style: none;
   overflow: hidden;
 }
-ul.jgicons-list li {
+ul.jgicon-list li {
   float: left;
   margin: 6px 6px 6px 0;
   width: 145px;
@@ -85,15 +85,15 @@ ul.jgicons-list li {
   position: relative;
   padding-top: 10px;
 }
-ul.jgicons-list li:hover {
+ul.jgicon-list li:hover {
   background-color: #4BB8FF;
   color: #fff;
   border-radius: 4px;
 }
-ul.jgicons-list li.copied:hover {
+ul.jgicon-list li.copied:hover {
   color: rgba(255,255,255,0.2);
 }
-ul.jgicons-list li:after {
+ul.jgicon-list li:after {
   position: absolute;
   top: 10px;
   left: 0;
@@ -106,7 +106,7 @@ ul.jgicons-list li:after {
   transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   opacity: 0;
 }
-ul.jgicons-list li.copied:after {
+ul.jgicon-list li.copied:after {
   opacity: 1;
   top: 0;
 }

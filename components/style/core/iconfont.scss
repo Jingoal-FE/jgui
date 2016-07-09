@@ -2,11 +2,11 @@
 // $icon-url： 字体源文件的地址
 @font-face {
   font-family: 'jgicon';
-  src: url('#{$icon-url}.eot'); /* IE9*/
-  src: url('#{$icon-url}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('#{$icon-url}.woff') format('woff'), /* chrome、firefox */
-  url('#{$icon-url}.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('#{$icon-url}.svg#iconfont') format('svg'); /* iOS 4.1- */
+  src:    url('#{$icon-url}.eot?jjr3ee');
+  src:    url('#{$icon-url}.eot?jjr3ee#iefix') format('embedded-opentype'),
+  url('#{$icon-url}.ttf?jjr3ee') format('truetype'),
+  url('#{$icon-url}.woff?jjr3ee') format('woff'),
+  url('#{$icon-url}.svg?jjr3ee#icomoon') format('svg');
 }
 
 .#{$iconfont-css-prefix} {
@@ -101,7 +101,7 @@
 .#{$iconfont-css-prefix}-customerservice:before          {content:"\e65e";}
 .#{$iconfont-css-prefix}-credit-card:before              {content:"\e65f";}
 .#{$iconfont-css-prefix}-code:before                     {content:"\e65d";}
-.#{$iconfont-css-prefix}-calendar:before                 {content:"\e654";}
+.#{$iconfont-css-prefix}-calendar:before                 {content:"\e9b1";}
 .#{$iconfont-css-prefix}-book:before                     {content:"\e655";}
 .#{$iconfont-css-prefix}-bars:before                     {content:"\e650";}
 .#{$iconfont-css-prefix}-bar-chart:before                {content:"\e651";}
@@ -117,13 +117,13 @@
 .#{$iconfont-css-prefix}-swap:before                     {content:"\e641";}
 .#{$iconfont-css-prefix}-swap-left:before                {content:"\e63f";}
 .#{$iconfont-css-prefix}-swap-right:before               {content:"\e640";}
-.#{$iconfont-css-prefix}-plus-circle:before              {content:"\e63d";}
-.#{$iconfont-css-prefix}-plus:before                     {content:"\e63e";}
-.#{$iconfont-css-prefix}-plus-circle-o:before            {content:"\e63c";}
+.#{$iconfont-css-prefix}-plus-circle:before              {content:"\e9e3";}
+.#{$iconfont-css-prefix}-plus:before                     {content:"\e9e9";}
+.#{$iconfont-css-prefix}-plus-circle-o:before            {content:"\e9e4";}
 .#{$iconfont-css-prefix}-minus:before                    {content:"\e63b";}
 .#{$iconfont-css-prefix}-minus-circle-o:before           {content:"\e63a";}
 .#{$iconfont-css-prefix}-minus-circle:before             {content:"\e639";}
-.#{$iconfont-css-prefix}-plus-square:before              {content:"\e6ae";}
+.#{$iconfont-css-prefix}-plus-square:before              {content:"\e9e8";}
 .#{$iconfont-css-prefix}-minus-square:before             {content:"\e6ad";}
 .#{$iconfont-css-prefix}-info-circle-o:before            {content:"\e638";}
 .#{$iconfont-css-prefix}-info-circle:before              {content:"\e637";}
@@ -135,7 +135,7 @@
 .#{$iconfont-css-prefix}-cross-circle-o:before           {content:"\e632";}
 .#{$iconfont-css-prefix}-check-circle:before             {content:"\e62f";}
 .#{$iconfont-css-prefix}-check-circle-o:before           {content:"\e630";}
-.#{$iconfont-css-prefix}-cross:before                    {content:"\e62d";}
+.#{$iconfont-css-prefix}-cross:before                    {content:"\ea19";}
 .#{$iconfont-css-prefix}-check:before                    {content:"\e62e";}
 .#{$iconfont-css-prefix}-verticle-right:before           {content:"\e62c";}
 .#{$iconfont-css-prefix}-verticle-left:before            {content:"\e62b";}
@@ -145,16 +145,16 @@
 .#{$iconfont-css-prefix}-shrink:before                   {content:"\e628";}
 .#{$iconfont-css-prefix}-arrow-salt:before               {content:"\e629";}
 .#{$iconfont-css-prefix}-reload:before                   {content:"\e626";}
-.#{$iconfont-css-prefix}-double-right:before             {content:"\e625";}
-.#{$iconfont-css-prefix}-double-left:before              {content:"\e624";}
+.#{$iconfont-css-prefix}-double-right:before             {content:"\ea2b";}
+.#{$iconfont-css-prefix}-double-left:before              {content:"\ea2a";}
 .#{$iconfont-css-prefix}-arrow-right:before              {content:"\e621";}
 .#{$iconfont-css-prefix}-arrow-up:before                 {content:"\e622";}
 .#{$iconfont-css-prefix}-arrow-down:before               {content:"\e623";}
 .#{$iconfont-css-prefix}-arrow-left:before               {content:"\e620";}
-.#{$iconfont-css-prefix}-left:before                     {content:"\e601";}
-.#{$iconfont-css-prefix}-right:before                    {content:"\e600";}
-.#{$iconfont-css-prefix}-down:before                     {content:"\e603";}
-.#{$iconfont-css-prefix}-up:before                       {content:"\e602";}
+.#{$iconfont-css-prefix}-left:before                     {content:"\ea2e";}
+.#{$iconfont-css-prefix}-right:before                    {content:"\ea2f";}
+.#{$iconfont-css-prefix}-down:before                     {content:"\ea2d";}
+.#{$iconfont-css-prefix}-up:before                       {content:"\ea30";}
 .#{$iconfont-css-prefix}-play-circle:before              {content:"\e61e";}
 .#{$iconfont-css-prefix}-play-circle-o:before            {content:"\e61f";}
 .#{$iconfont-css-prefix}-circle-left:before              {content:"\e61b";}
