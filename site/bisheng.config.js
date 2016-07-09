@@ -53,6 +53,11 @@ module.exports = {
             }
         );
 
+        config.module.loaders.push({
+            test: /\.tpl$/,
+            loader: 'html-loader',
+        });
+
         config.babel.plugins.push([
             require.resolve('babel-plugin-antd'),
             {

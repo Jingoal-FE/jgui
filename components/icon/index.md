@@ -62,6 +62,13 @@ const icons3 = ['lock', 'unlock', 'android', 'apple', 'area-chart', 'bar-chart',
 ReactDOM.render(<IconSet className="icons" icons={icons3} key="icons3" />, mountNode);
 ```
 
+### 三. 彩色图标
+
+```__react
+const icons4 = ['color-mobile', 'color-xls', 'color-image', 'color-doc', 'color-pdf', 'color-rar', 'color-file-unknown', 'color-video', 'color-zip', 'color-folder'];
+
+ReactDOM.render(<IconSet className="icons" icons={icons4} key="icons4" />, mountNode);
+```
 
 <style>
 .markdown .icons {

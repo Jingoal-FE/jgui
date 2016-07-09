@@ -16,6 +16,11 @@ module.exports = function (webpackConfig) {
         loader: 'es3ify-loader',
     });
 
+    webpackConfig[0].module.loaders.unshift({
+        test: /\.tpl$/,
+        loader: 'html-loader',
+    });
+
     webpackConfig[0].module.loaders.push({
         test: /\.scss/,
         loader: ExtractTextPlugin.extract(

@@ -1,6 +1,6 @@
 {
   "name": "jgui",
-  "version": "0.0.1-beta5",
+  "version": "0.0.1-beta9",
   "keywords": [
     "react",
     "react-component",
@@ -86,6 +86,7 @@
     "eslint-tinker": "^0.3.1",
     "gulp-babel": "^6.1.2",
     "history": "^2.0.1",
+    "html-loader": "^0.4.3",
     "intl": "^1.2.2",
     "intl-locales-supported": "^1.0.0",
     "jest-cli": "^12.0.2",
@@ -95,7 +96,6 @@
     "loader-utils": "^0.2.15",
     "lodash.debounce": "^4.0.6",
     "merge-stream": "^1.0.0",
-    "nunjucks": "^2.4.2",
     "postcss": "^5.0.21",
     "pre-commit": "1.x",
     "querystring": "^0.2.0",
@@ -131,6 +131,7 @@
     "srclint": "RUN_ENV=SRC eslint test site scripts ./*.js --ext '.js,.jsx'",
     "demolint": "RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'",
     "eslint-fix": "eslint --fix components test site scripts ./*.js --ext '.js,.jsx' && eslint-tinker ./components/*/demo/*.md",
-    "pre-publish": "node ./scripts/prepub"
+    "pre-publish": "node ./scripts/prepub",
+    "prepear-publish": "npm run dist && npm run compile && npm run pre-publish"
   }
 }
