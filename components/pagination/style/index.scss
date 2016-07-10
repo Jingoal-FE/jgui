@@ -88,7 +88,7 @@ $pagination-prefix-cls: jgui-pagination;
   &-jump-prev {
     &:hover {
       &:after {
-        content: "\e601\e601";
+        content: "\ea2e\ea2e";
       }
     }
   }
@@ -96,7 +96,7 @@ $pagination-prefix-cls: jgui-pagination;
   &-jump-next {
     &:hover {
       &:after {
-        content: "\e600\e600";
+        content: "\ea2f\ea2f";
       }
     }
   }
@@ -156,7 +156,7 @@ $pagination-prefix-cls: jgui-pagination;
     a {
       &:after {
         margin-top: -.5px;
-        content: "\e601";
+        content: "\ea2e";
         display: block;
       }
     }
@@ -165,7 +165,7 @@ $pagination-prefix-cls: jgui-pagination;
   &-next {
     a {
       &:after {
-        content: "\e600";
+        content: "\ea2f";
         display: block;
       }
     }

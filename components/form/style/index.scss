@@ -81,22 +81,29 @@ input[type="checkbox"] {
     margin-bottom: $form-item-margin-bottom - $font-size-base * $line-height-base - 3;
   }
 
-  > label {
-    color: $label-color;
+  > div:first-child {
     text-align: right;
     vertical-align: middle;
     padding: 7px 0;
 
-    &:after {
-      content: ":";
-      margin: 0 8px 0 2px;
-      position: relative;
-      top: -0.5px;
+    label {
+      color: $label-color;
+
+      &:after {
+        content: ":";
+        margin: 0 8px 0 2px;
+        position: relative;
+        top: -0.5px;
+      }
     }
   }
 
   .jgui-switch {
     margin: 4px 0;
+  }
+
+  &.#{$form-prefix-cls}-no-colon > label:after {
+    content: " ";
   }
 }
 
@@ -234,11 +241,6 @@ form {
     }
   }
 
-  .jgui-input {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
   .#{$form-prefix-cls}-text {
     display: inline-block;
   }
@@ -307,7 +309,7 @@ form {
   }
 
   &.has-feedback:after {
-    content: '\e62f';
+    content: '\e9e1';
     color: $success-color;
   }
 }
@@ -316,7 +318,7 @@ form {
   @include form-control-validation($warning-color, $warning-color);
 
   &.has-feedback:after {
-    content: '\e634';
+    content: '\e9d9';
     color: $warning-color;
   }
 
@@ -324,7 +326,7 @@ form {
   .jgui-select {
     &-selection {
       border-color: $warning-color;
-      box-shadow: 0 0 0 2px rgba($warning-color, 0.2);
+      box-shadow: 0 0 0 2px fade($warning-color, 20%);
     }
     &-arrow {
       color: $warning-color;
@@ -344,7 +346,7 @@ form {
   //input-number
   .jgui-input-number {
     border-color: $warning-color;
-    box-shadow: 0 0 0 2px rgba($warning-color, 0.2);
+    box-shadow: 0 0 0 2px fade($warning-color, 20%);
     &:not([disabled]):hover {
       border-color: $warning-color;
     }
@@ -355,7 +357,7 @@ form {
   @include form-control-validation($error-color, $error-color);
 
   &.has-feedback:after {
-    content: '\e631';
+    content: '\e9d3';
     color: $error-color;
   }
 
@@ -363,7 +365,7 @@ form {
   .jgui-select {
     &-selection {
       border-color: $error-color;
-      box-shadow: 0 0 0 2px rgba($error-color, 0.2);
+      box-shadow: 0 0 0 2px fade($error-color, 20%);
     }
 
     &-arrow {
@@ -384,7 +386,7 @@ form {
   //input-number
   .jgui-input-number {
     border-color: $error-color;
-    box-shadow: 0 0 0 2px rgba($error-color, 0.2);
+    box-shadow: 0 0 0 2px fade($error-color, 20%);
     &:not([disabled]):hover {
       border-color: $error-color;
     }
@@ -395,7 +397,7 @@ form {
   &.has-feedback:after {
     display: inline-block;
     animation: loadingCircle 1s infinite linear;
-    content: "\e6a1";
+    content: "\ea16";
     color: #999;
   }
 }
@@ -413,35 +415,29 @@ form {
 
 // need there different zoom animation
 // otherwise won't trigger anim
-@keyframes diffZoomIn1{
-0% {
-  transform: scale(0);
+@keyframes diffZoomIn1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-100% {
-  transform: scale(1);
+@keyframes diffZoomIn2 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-}
-
-@keyframes diffZoomIn2{
-0% {
-  transform: scale(0);
-}
-
-100% {
-  transform: scale(1);
-}
-
-}
-
-@keyframes diffZoomIn3{
-0% {
-  transform: scale(0);
-}
-
-100% {
-  transform: scale(1);
-}
-
+@keyframes diffZoomIn3 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

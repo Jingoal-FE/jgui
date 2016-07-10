@@ -43,10 +43,10 @@ $collapse-prefix-cls: jgui-collapse;
         transition: transform 0.24s ease;
         top: 0;
         left: 16px;
-        top: "16px \9";
-        left:  "0 \9";
+        top: 16px \9;
+        left: 0 \9;
         &:before {
-          content: "\e611";
+          content: "\ea21";
         }
       }
     }

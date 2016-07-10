@@ -11,7 +11,7 @@
 }
 
 @mixin make-grid-columns($i: 1, $list: ".jgui-col-#{$i}, .jgui-col-xs-#{$i}, .jgui-col-sm-#{$i}, .jgui-col-md-#{$i}, .jgui-col-lg-#{$i}") {
-  @for $i from (1 + 1) through $grid-columns {
+  @for $i from 1 through $grid-columns {
     $list: "#{$list}, .jgui-col-#{$i}, .jgui-col-xs-#{$i}, .jgui-col-sm-#{$i}, .jgui-col-md-#{$i}, .jgui-col-lg-#{$i}";
   }
   #{$list} {
@@ -27,7 +27,7 @@
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
 @mixin float-grid-columns($class, $i: 1, $list: ".jgui-col-#{$class}-#{$i}") {
-  @for $i from (1 + 1) through $grid-columns {
+  @for $i from 1 through $grid-columns {
     $list: "#{$list}, .jgui-col#{$class}-#{$i}";
   }
   #{$list} {

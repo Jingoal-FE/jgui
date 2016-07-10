@@ -67,7 +67,7 @@ module.exports = {
             },
         ]);
 
-        config.plugins.push(new ExtractTextPlugin("style.css"));
+        config.plugins.push(new ExtractTextPlugin("index.css"));
 
         return config;
     },

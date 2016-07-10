@@ -12,9 +12,11 @@ $warning-color          : #ffa852;
 // ------ Base & Require ------
 $body-background        : #fff;
 
-$font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+$font-family            : "PingFangSC-Regular"，"微软雅黑", "Microsoft-Yahei", Helvetica, Arial, Verdana, sans-serif;
 $code-family            : Consolas,Menlo,Courier,monospace;
-$text-color             : #666;
+$text-color-dark        : #333333;
+$text-color             : #666666;
+$text-color-light       : #999999;
 $font-size-base         : 12px;
 $line-height-base       : 1.5;
 $line-height-computed   : floor(($font-size-base * $line-height-base));
@@ -152,7 +154,7 @@ $input-padding-vertical-sm   : 1px;
 $input-padding-vertical-lg   : 6px;
 
 $input-placeholder-color     : #ccc;
-$input-color                 : $text-color;
+$input-color                 : $text-color-dark;
 $input-border-color          : $border-color-base;
 $input-bg                    : #fff;
 

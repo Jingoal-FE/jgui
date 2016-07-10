@@ -100,14 +100,14 @@ $tab-prefix-cls: jgui-tabs;
     right: 2px;
 
     &-icon:before {
-      content: "\e600";
+      content: "\ea2f";
     }
   }
 
   &-tab-prev {
     left: 0;
     &-icon:before {
-      content: "\e601";
+      content: "\ea2e";
     }
     :root & {
       filter: none;

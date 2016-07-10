@@ -28,7 +28,7 @@ $select-prefix-cls: jgui-select;
   &:before {
     display: block;
     font-family: "jgicon" !important;
-    content: "\E631";
+    content: "\e9d3";
   }
 
   &:hover {
@@ -65,7 +65,7 @@ $select-prefix-cls: jgui-select;
     }
 
     &:before {
-      content: '\e603';
+      content: '\ea21';
       transition: transform 0.2s ease;
     }
   }
@@ -315,7 +315,7 @@ $select-prefix-cls: jgui-select;
         color: #404040;
       }
       &:before {
-        content: "\e62d";
+        content: "\ea19";
       }
     }
   }

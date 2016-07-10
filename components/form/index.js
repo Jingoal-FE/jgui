@@ -4,12 +4,12 @@ import ValueMixin from './ValueMixin';
 import createDOMForm from 'rc-form/lib/createDOMForm';
 import assign from 'object-assign';
 Form.create = (o = {}) => {
-  const options = assign({}, o, {
-    fieldNameProp: 'id',
-    fieldMetaProp: '__meta',
-  });
+    const options = assign({}, o, {
+        fieldNameProp: 'id',
+        fieldMetaProp: 'data-__meta',
+    });
 
-  return createDOMForm(options);
+    return createDOMForm(options);
 };
 Form.Item = FormItem;
 

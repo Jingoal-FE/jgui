@@ -107,7 +107,7 @@ $dropdown-prefix-cls: jgui-dropdown;
     &-submenu-title:after {
       font-family: "jgicon" !important;
       position: absolute;
-      content: "\e600";
+      content: "\ea2d";
       right: 15px;
       color: #999;
       @include iconfont-size-under-12px(8px);

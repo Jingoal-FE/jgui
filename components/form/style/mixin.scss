@@ -7,7 +7,7 @@
   // 输入框的不同校验状态
   .jgui-input {
     border-color: $border-color;
-    box-shadow: 0 0 0 2px rgba($border-color, 0.2);
+    box-shadow: 0 0 0 2px fade($border-color, 20%);
 
     &:not([disabled]):hover {
       border-color: $border-color;
@@ -15,7 +15,7 @@
   }
 
   .jgui-calendar-picker-open .jgui-calendar-picker-input {
-    box-shadow: 0 0 0 2px rgba($border-color, 0.2);
+    box-shadow: 0 0 0 2px fade($border-color, 20%);
   }
 
   .jgui-input-group-addon {
@@ -100,4 +100,5 @@
     line-height: $line-height-base;
     color: $input-color;
   }
+
 }
