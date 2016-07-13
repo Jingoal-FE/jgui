@@ -21,17 +21,11 @@ export default class Drawer extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-    // 处理点击Drawer以外的问题
-    // document.addEventListener('click', () => {
-    //     console.log(drawerDom);
-    //   });
-  }
 
   render() {
 
     const props = this.props;
-    const { prefixCls,children,direction} = props;
+    const { prefixCls,children,direction,className} = props;
 
 
     // 用户自定义 需要样式覆盖控制的
@@ -39,7 +33,9 @@ export default class Drawer extends React.Component {
       width:   props.size || 250,
       height:  props.size || 250,
       zIndex:  props.zIndex || 998,
+      position:props.position,
       transition: props.transition,
+      className: props.className || '',
     }
     // 用类名控制 样式写在SCSS文件里的
     let classes = classNames({
@@ -47,10 +43,11 @@ export default class Drawer extends React.Component {
       [`${prefixCls}-open`]: props.open,
       [`${prefixCls}-close`]: !props.open,
       [`${prefixCls}-${direction}`]: true,
+      [className]: className,
     });
 
     return (
-        <div className={classes} style= {drawerOverlay}>
+        <div className={classes}  style= {drawerOverlay}>
           {children}
         </div>
     )

@@ -1,8 +1,20 @@
 import * as React from 'react';
 
+let typeMap = {
+    'color-jpg': 'color-image',
+    'color-jpeg': 'color-image',
+    'color-png': 'color-image',
+    'color-gif': 'color-image',
+    'color-docx': 'color-doc',
+    'color-xlsx': 'color-xls',
+    'color-pptx': 'color-ppt'
+}
 export default props => {
-    const {type, className = ''} = props;
+    let {type, className = ''} = props;
     if (type.indexOf('color-') === 0) {
+        let realType = typeMap[type];
+        console.log('realType' + realType)
+        type = realType || type;
         let className = `jgicon jgicon-${type}`;
         return (
             <span className={className}>

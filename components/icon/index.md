@@ -65,7 +65,7 @@ ReactDOM.render(<IconSet className="icons" icons={icons3} key="icons3" />, mount
 ### 三. 彩色图标
 
 ```__react
-const icons4 = ['color-mobile', 'color-xls', 'color-image', 'color-doc', 'color-pdf', 'color-rar', 'color-file-unknown', 'color-video', 'color-zip', 'color-folder'];
+const icons4 = ['color-mobile', 'color-xls', 'color-image', 'color-gif', 'color-png', 'color-jpg', 'color-jpeg', 'color-docx', 'color-xlsx', 'color-pptx', 'color-txt','color-doc', 'color-pdf', 'color-rar', 'color-file-unknown', 'color-video', 'color-zip', 'color-folder'];
 
 ReactDOM.render(<IconSet className="icons" icons={icons4} key="icons4" />, mountNode);
 ```
