@@ -13,7 +13,6 @@ export default props => {
     let {type, className = ''} = props;
     if (type.indexOf('color-') === 0) {
         let realType = typeMap[type];
-        console.log('realType' + realType)
         type = realType || type;
         let className = `jgicon jgicon-${type}`;
         return (

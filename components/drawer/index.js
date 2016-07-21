@@ -27,7 +27,6 @@ export default class Drawer extends React.Component {
     const props = this.props;
     const { prefixCls,children,direction,className} = props;
 
-
     // 用户自定义 需要样式覆盖控制的
     const drawerOverlay = {
       width:   props.size || 250,

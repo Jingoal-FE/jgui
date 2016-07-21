@@ -81,6 +81,7 @@ const Demo = React.createClass({
       }
       return <TreeNode key={item.key} title={item.key} />;
     });
+    console.log(gData)
     return (
       <Tree checkable multiple={this.props.multiple}
         onExpand={this.onExpand} expandedKeys={this.state.expandedKeys}

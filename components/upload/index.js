@@ -1,5 +1,5 @@
 import React from 'react';
-import RcUpload from 'rc-upload';
+import RcUpload from './rc-upload';
 import UploadList from './uploadList';
 import getFileItem from './getFileItem';
 import classNames from 'classnames';
