@@ -18,6 +18,8 @@ const AjaxUploader = React.createClass({
         withCredentials: PropTypes.bool,
     },
 
+    secondAction: '',
+
     getInitialState() {
         return {
             disabled: false,
@@ -66,7 +68,32 @@ const AjaxUploader = React.createClass({
         e.preventDefault();
     },
 
-    uploadFiles(files) {
+    uploadFiles(files)  {
+        const props = this.props;
+        const { realUploadFiles } = this
+        if (!props.beforeUpload) {
+            return realUploadFiles(files)
+        } else {
+            const before = props.beforeUpload(files);
+            if (before && before.then) {
+                before.then(
+                (processedFiles) => {
+                    console.log(processedFiles)
+                    realUploadFiles(processedFiles)
+                },
+                () => {
+                    this._reset();
+                });
+            } else if (before !== false) {
+                realUploadFiles(files)
+            } else {
+                // fix https://github.com/ant-design/ant-design/issues/1989
+                this._reset();
+            }
+        }
+    },
+
+    realUploadFiles(files) {
         let postFiles = Array.prototype.slice.call(files);
         if (!this.props.multiple) {
             postFiles = postFiles.slice(0, 1);
@@ -87,28 +114,8 @@ const AjaxUploader = React.createClass({
     },
 
     upload(file) {
-        const props = this.props;
-        if (!props.beforeUpload) {
-            return this.post(file);
-        }
-
-        const before = props.beforeUpload(file);
-        if (before && before.then) {
-            before.then((processedFile) => {
-                if (Object.prototype.toString.call(processedFile) === '[object File]') {
-                    this.post(processedFile);
-                } else {
-                    this.post(file);
-                }
-            }, () => {
-                this._reset();
-            });
-        } else if (before !== false) {
-            this.post(file);
-        } else {
-            // fix https://github.com/ant-design/ant-design/issues/1989
-            this._reset();
-        }
+        console.log(Object.prototype.toString.call(file))
+        return this.post(file);
     },
 
     post(file) {
@@ -119,7 +126,7 @@ const AjaxUploader = React.createClass({
         }
 
         request({
-            action: props.action,
+            action: file.action || props.action,
             filename: props.name,
             file: file,
             data: data,

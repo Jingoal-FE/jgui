@@ -59,6 +59,7 @@
 
   &:hover &-clear {
     opacity: 1;
+    z-index: 1;
   }
   &-icon {
     position: absolute;

@@ -17,24 +17,24 @@ export default class DropdownButton extends React.Component {
       targetOffset: [0, 0],
     },
     type: 'default',
-  }
+  };
 
   render() {
-    const [{ type, overlay, trigger, align, children, className, onClick },restProps] = splitObject(this.props, 
-      ['type', 'overlay', 'trigger', 'align', 'children', 'className', 'onClick']);
+    const [{ type, overlay, trigger, align, children, className, onClick }, restProps] = splitObject(this.props,
+        ['type', 'overlay', 'trigger', 'align', 'children', 'className', 'onClick']);
     const cls = classNames({
       'jgui-dropdown-button': true,
       [className]: !!className,
     });
     return (
-      <ButtonGroup {...restProps} className={cls}>
-        <Button type={type} onClick={onClick}>{children}</Button>
-        <Dropdown align={align} overlay={overlay} trigger={trigger}>
-          <Button type={type}>
-            <Icon type="down" />
-          </Button>
-        </Dropdown>
-      </ButtonGroup>
+        <ButtonGroup {...restProps} className={cls}>
+          <Button type={type} onClick={onClick}>{children}</Button>
+          <Dropdown align={align} overlay={overlay} trigger={trigger}>
+            <Button type={type}>
+              <Icon type="down" />
+            </Button>
+          </Dropdown>
+        </ButtonGroup>
     );
   }
 }

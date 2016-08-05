@@ -107,7 +107,7 @@
     @include calendarPanelHeader($calendar-prefix-cls);
   }
 
-  &-calendar-body {
+  &-body {
     padding: 4px 8px;
   }
 
@@ -163,6 +163,10 @@
     background: transparent;
     text-align: center;
     transition: background 0.3s ease;
+
+    &-panel {
+      position: relative;
+    }
 
     &:hover {
       background: tint($primary-color, 90%);
@@ -261,8 +265,7 @@
   }
 
   .#{$calendar-prefix-cls}-clear-btn:after {
-    content: "\e69d3";
-    font-family: "jgicon";
+    @include iconfont-font("\e69d3");
     font-size: 12px;
     color: #ccc;
     display: inline-block;
@@ -287,6 +290,9 @@
     &-disabled {
       @include button-color($btn-disable-color, $btn-disable-bg, $btn-disable-border);
       cursor: not-allowed;
+      &:hover {
+        @include button-color($btn-disable-color, $btn-disable-bg, $btn-disable-border);
+      }
     }
   }
 }

@@ -7,7 +7,6 @@ import assign from 'object-assign';
 import Icon from '../icon';
 
 export default function createPicker(TheCalendar) {
-  // use class typescript error
   const CalenderWrapper = React.createClass({
 
     getInitialState() {
@@ -50,7 +49,7 @@ export default function createPicker(TheCalendar) {
       defaultCalendarValue.setTime(Date.now());
 
       const placeholder = ('placeholder' in props)
-        ? props.placeholder : locale.lang.placeholder;
+          ? props.placeholder : locale.lang.placeholder;
 
       const disabledTime = props.showTime ? props.disabledTime : null;
 
@@ -59,18 +58,39 @@ export default function createPicker(TheCalendar) {
         'jgui-calendar-month': MonthCalendar === TheCalendar,
       });
 
+      // 需要选择时间时，点击 ok 时才触发 onChange
+      let pickerChangeHandler = {
+        onChange: this.handleChange,
+      };
+      let calendarHandler = {
+        onOk: this.handleChange,
+        // fix https://github.com/jgui-design/jgui-design/issues/1902
+        onSelect: (value, cause) => {
+          if (cause && cause.source === 'todayButton') {
+            this.handleChange(value);
+          }
+        },
+      };
+      if (props.showTime) {
+        pickerChangeHandler = {};
+      } else {
+        calendarHandler = {};
+      }
+
       const calendar = (
-        <TheCalendar
-          formatter={props.getFormatter()}
-          disabledDate={props.disabledDate}
-          disabledTime={disabledTime}
-          locale={locale.lang}
-          timePicker={props.timePicker}
-          defaultValue={defaultCalendarValue}
-          dateInputPlaceholder={placeholder}
-          prefixCls="jgui-calendar"
-          className={calendarClassName}
-        />
+          <TheCalendar
+              formatter={props.getFormatter()}
+              disabledDate={props.disabledDate}
+              disabledTime={disabledTime}
+              locale={locale.lang}
+              timePicker={props.timePicker}
+              defaultValue={defaultCalendarValue}
+              dateInputPlaceholder={placeholder}
+              prefixCls="jgui-calendar"
+              className={calendarClassName}
+              onOk={props.onOk}
+              {...calendarHandler}
+          />
       );
 
       // default width for showTime
@@ -80,43 +100,43 @@ export default function createPicker(TheCalendar) {
       }
 
       const clearIcon = (!props.disabled && this.state.value) ?
-        <Icon type="cross-circle"
-          className="jgui-calendar-picker-clear"
-          onClick={this.clearSelection}
-        /> : null;
+          <Icon type="cross-circle"
+                className="jgui-calendar-picker-clear"
+                onClick={this.clearSelection}
+          /> : null;
       return (
-        <span className={props.pickerClass} style={assign({}, pickerStyle, props.style)}>
+          <span className={props.pickerClass} style={assign({}, pickerStyle, props.style)}>
           <RcDatePicker
-            transitionName={props.transitionName}
-            disabled={props.disabled}
-            calendar={calendar}
-            value={this.state.value}
-            prefixCls="jgui-calendar-picker-container"
-            style={props.popupStyle}
-            align={props.align}
-            getCalendarContainer={props.getCalendarContainer}
-            open={props.open}
-            onOpen={props.toggleOpen}
-            onClose={props.toggleOpen}
-            onChange={this.handleChange}
+              transitionName={props.transitionName}
+              disabled={props.disabled}
+              calendar={calendar}
+              value={this.state.value}
+              prefixCls="jgui-calendar-picker-container"
+              style={props.popupStyle}
+              align={props.align}
+              getCalendarContainer={props.getCalendarContainer}
+              open={props.open}
+              onOpen={props.toggleOpen}
+              onClose={props.toggleOpen}
+              {...pickerChangeHandler}
           >
             {
               ({ value }) => {
                 return (
-                <span>
+                    <span>
                     <input
-                      disabled={props.disabled}
-                      readOnly
-                      value={value ? props.getFormatter().format(value) : ''}
-                      placeholder={placeholder}
-                      className={props.pickerInputClass}
+                        disabled={props.disabled}
+                        readOnly
+                        value={value ? props.getFormatter().format(value) : ''}
+                        placeholder={placeholder}
+                        className={props.pickerInputClass}
                     />
-                    {clearIcon}
-                    <span className="jgui-calendar-picker-icon" />
+                      {clearIcon}
+                      <span className="jgui-calendar-picker-icon" />
                   </span>
-                  );
-                }
+                );
               }
+            }
           </RcDatePicker>
         </span>
       );

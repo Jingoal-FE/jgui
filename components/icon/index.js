@@ -14,7 +14,7 @@ export default props => {
     if (type.indexOf('color-') === 0) {
         let realType = typeMap[type];
         type = realType || type;
-        let className = `jgicon jgicon-${type}`;
+        let className = `jgicon jgicon-color jgicon-${type}`;
         return (
             <span className={className}>
                 <span className="path1"></span>

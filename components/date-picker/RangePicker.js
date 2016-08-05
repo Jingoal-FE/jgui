@@ -3,11 +3,12 @@ import GregorianCalendar from 'gregorian-calendar';
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
 import RcDatePicker from 'rc-calendar/lib/Picker';
 import classNames from 'classnames';
+import Icon from '../icon';
 
 export default class RangePicker extends React.Component {
   static defaultProps = {
     defaultValue: [],
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -33,6 +34,13 @@ export default class RangePicker extends React.Component {
     }
   }
 
+  clearSelection = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    this.setState({ value: [] });
+    this.handleChange([]);
+  }
+
   handleChange = (value) => {
     const props = this.props;
     if (!('value' in props)) {
@@ -55,88 +63,93 @@ export default class RangePicker extends React.Component {
     defaultCalendarValue.setTime(Date.now());
 
     const { disabledDate, showTime, getCalendarContainer,
-      transitionName, disabled, popupStyle, align, style, onOk } = this.props;
+        transitionName, disabled, popupStyle, align, style, onOk } = this.props;
     const state = this.state;
 
     const calendarClassName = classNames({
       'jgui-calendar-time': showTime,
     });
 
+    // 需要选择时间时，点击 ok 时才触发 onChange
     let pickerChangeHandler = {
       onChange: this.handleChange,
     };
-
     let calendarHandler = {
       onOk: this.handleChange,
     };
-
     if (props.timePicker) {
       pickerChangeHandler.onChange = (value) => {
-        // Click clear button
-        if (value === null || value.length === 0) {
-          this.handleChange(value);
-        }
+        this.handleChange(value);
       };
     } else {
       calendarHandler = {};
     }
 
     const startPlaceholder = ('startPlaceholder' in this.props)
-      ? props.startPlaceholder : locale.lang.rangePlaceholder[0];
+        ? props.startPlaceholder : locale.lang.rangePlaceholder[0];
     const endPlaceholder = ('endPlaceholder' in props)
-      ? props.endPlaceholder : locale.lang.rangePlaceholder[1];
+        ? props.endPlaceholder : locale.lang.rangePlaceholder[1];
 
     const calendar = (
-      <RangeCalendar
-        prefixCls="jgui-calendar"
-        className={calendarClassName}
-        timePicker={props.timePicker}
-        disabledDate={disabledDate}
-        dateInputPlaceholder={[startPlaceholder, endPlaceholder]}
-        locale={locale.lang}
-        onOk={onOk}
-        defaultValue={[defaultCalendarValue, defaultCalendarValue]}
-        {...calendarHandler}
-      />
+        <RangeCalendar
+            prefixCls="jgui-calendar"
+            formatter={props.getFormatter()}
+            className={calendarClassName}
+            timePicker={props.timePicker}
+            disabledDate={disabledDate}
+            dateInputPlaceholder={[startPlaceholder, endPlaceholder]}
+            locale={locale.lang}
+            onOk={onOk}
+            defaultValue={[defaultCalendarValue, defaultCalendarValue]}
+            {...calendarHandler}
+        />
     );
+
+    const clearIcon = (!props.disabled && state.value && (state.value[0] || state.value[1]))
+        ? <Icon
+        type="cross-circle"
+        className="jgui-calendar-picker-clear"
+        onClick={this.clearSelection}
+    /> : null;
 
     return (<span className={props.pickerClass} style={style}>
       <RcDatePicker
-        formatter={props.getFormatter()}
-        transitionName={transitionName}
-        disabled={disabled}
-        calendar={calendar}
-        value={state.value}
-        prefixCls="jgui-calendar-picker-container"
-        style={popupStyle}
-        align={align}
-        getCalendarContainer={getCalendarContainer}
-        onOpen={props.toggleOpen}
-        onClose={props.toggleOpen}
-        {...pickerChangeHandler}
+          formatter={props.getFormatter()}
+          transitionName={transitionName}
+          disabled={disabled}
+          calendar={calendar}
+          value={state.value}
+          prefixCls="jgui-calendar-picker-container"
+          style={popupStyle}
+          align={align}
+          getCalendarContainer={getCalendarContainer}
+          onOpen={props.toggleOpen}
+          onClose={props.toggleOpen}
+          {...pickerChangeHandler}
       >
         {
           ({ value }) => {
             const start = value[0];
             const end = value[1];
             return (
-              <span className={props.pickerInputClass} disabled={disabled}>
+                <span className={props.pickerInputClass} disabled={disabled}>
                 <input
-                  disabled={disabled}
-                  readOnly
-                  value={start ? props.getFormatter().format(start) : ''}
-                  placeholder={startPlaceholder}
-                  className="jgui-calendar-range-picker-input"
+                    disabled={disabled}
+                    readOnly
+                    value={start ? props.getFormatter().format(start) : ''}
+                    placeholder={startPlaceholder}
+                    className="jgui-calendar-range-picker-input"
                 />
                 <span className="jgui-calendar-range-picker-separator"> ~ </span>
                 <input
-                  disabled={disabled}
-                  readOnly
-                  value={end ? props.getFormatter().format(end) : ''}
-                  placeholder={endPlaceholder}
-                  className="jgui-calendar-range-picker-input"
+                    disabled={disabled}
+                    readOnly
+                    value={end ? props.getFormatter().format(end) : ''}
+                    placeholder={endPlaceholder}
+                    className="jgui-calendar-range-picker-input"
                 />
-                <span className="jgui-calendar-picker-icon" />
+                  {clearIcon}
+                  <span className="jgui-calendar-picker-icon" />
               </span>
             );
           }

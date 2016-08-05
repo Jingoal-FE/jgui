@@ -126,9 +126,12 @@ export default class FormItem extends React.Component {
     renderWrapper(children) {
         const wrapperCol = this.props.wrapperCol;
         return (
+            wrapperCol ?
             <Col {...wrapperCol} key="wrapper">
                 {children}
             </Col>
+            :
+            <div key="wrapper" className={`${this.props.prefixCls}-item-wrapper`}>{children}</div>
         );
     }
 
@@ -162,11 +165,18 @@ export default class FormItem extends React.Component {
         }
 
         return props.label ? (
+            labelCol ?
             <Col {...labelCol}>
                 <label htmlFor={props.id || this.getId()} className={className} key="label">
                     {label}
                 </label>
             </Col>
+            :
+            <div className={`${this.props.prefixCls}-item-label`}>
+                <label htmlFor={props.id || this.getId()} className={className} key="label">
+                    {label}
+                </label>
+            </div>
         ) : null;
     }
 

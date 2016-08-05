@@ -11,13 +11,23 @@ title: 限制用户上传的文件
 import { Upload, Button, Icon, message } from 'jgui';
 
 const props = {
-  action: '/upload.do',
-  beforeUpload(file) {
+  multiple: true,
+  beforeUpload(files) {
+  /*
     const isJPG = file.type === 'image/jpeg';
     if (!isJPG) {
       message.error('只能上传 JPG 文件哦！');
     }
     return isJPG;
+    */
+     return new Promise((resolve, reject) => {
+      let postFiles = Array.prototype.slice.call(files);
+      postFiles = postFiles.map((file, index) => {
+          file.action = '/upload.do?a=' + index
+          return file
+      })
+         resolve(postFiles)
+     })
   },
 };
 
