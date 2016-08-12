@@ -1,18 +1,15 @@
 @mixin iconfont-mixin() {
-  display: inline-block;
+  font-family: 'jgicon' !important;
+  speak: none;
   font-style: normal;
-  vertical-align: baseline;
-  text-align: center;
+  font-weight: normal;
+  font-variant: normal;
   text-transform: none;
-  text-rendering: auto;
   line-height: 1;
-  text-rendering: optimizeLegibility;
+
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  &:before {
-    display: block;
-    font-family: "jgicon" !important;
-  }
 }
 
 @mixin iconfont-font($content) {

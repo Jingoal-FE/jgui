@@ -2,11 +2,11 @@
 // $icon-url： 字体源文件的地址
 @font-face {
   font-family: 'jgicon';
-  src:    url('#{$icon-url}.eot?vxmyc5');
-  src:    url('#{$icon-url}.eot?vxmyc5#iefix') format('embedded-opentype'),
-  url('#{$icon-url}.ttf?vxmyc5') format('truetype'),
-  url('#{$icon-url}.woff?vxmyc5') format('woff'),
-  url('#{$icon-url}.svg?vxmyc5#icomoon') format('svg');
+  src:    url('#{$icon-url}.eot?t2eweb');
+  src:    url('#{$icon-url}.eot?t2eweb#iefix') format('embedded-opentype'),
+  url('#{$icon-url}.ttf?t2eweb') format('truetype'),
+  url('#{$icon-url}.woff?t2eweb') format('woff'),
+  url('#{$icon-url}.svg?t2eweb#icomoon') format('svg');
 }
 
 .#{$iconfont-css-prefix} {
@@ -205,6 +205,21 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
                          animation: loadingCircle 1s infinite linear;
                          content: "\ea16";
                        }
+
+.#{$iconfont-color-css-prefix} .path1:before {
+  content: "\ea5b";
+  color: rgb(194, 198, 202);
+}
+.#{$iconfont-color-css-prefix} .path2:before {
+  content: "\ea5c";
+  margin-left: -1em;
+  color: rgb(167, 173, 180);
+}
+.#{$iconfont-color-css-prefix} .path3:before {
+  content: "\ea5d";
+  margin-left: -1em;
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .#{$iconfont-color-css-prefix}-mobile {
   & .path1:before {
