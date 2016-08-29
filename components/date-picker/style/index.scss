@@ -4,7 +4,7 @@
 @import "../../button/style/mixin";
 
 $calendar-prefix-cls: jgui-calendar;
-$timepicker-prefix-cls: jgui-time-picker;
+$timepicker-prefix-cls: jgui-calendar-time-picker;
 
 @import "Picker";
 @import "Calendar";
@@ -14,3 +14,4 @@ $timepicker-prefix-cls: jgui-time-picker;
 @import "YearPanel";
 @import "DecadePanel";
 @import "MonthPicker";
+@import "RangeCalendar";

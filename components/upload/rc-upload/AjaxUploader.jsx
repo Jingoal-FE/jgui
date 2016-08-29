@@ -78,7 +78,6 @@ const AjaxUploader = React.createClass({
             if (before && before.then) {
                 before.then(
                 (processedFiles) => {
-                    console.log(processedFiles)
                     realUploadFiles(processedFiles)
                 },
                 () => {
@@ -114,7 +113,6 @@ const AjaxUploader = React.createClass({
     },
 
     upload(file) {
-        console.log(Object.prototype.toString.call(file))
         return this.post(file);
     },
 

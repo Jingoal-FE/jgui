@@ -66,6 +66,7 @@ const IframeUploader = React.createClass({
     },
 
     onChange() {
+        const props = this.props;
         const target = this.getFormInputNode();
         // ie8/9 don't support FileList Object
         // http://stackoverflow.com/questions/12830058/ie8-input-type-file-get-files
@@ -73,6 +74,23 @@ const IframeUploader = React.createClass({
             uid: uid(),
             name: target.value,
         };
+
+        if (!props.beforeUpload) {
+            return this.upload(file)
+        } else {
+            const before = props.beforeUpload([file]);
+            if (before && before.then) {
+                before.then(
+                    (processedFiles) => {
+                        this.upload(processedFiles[0])
+                    });
+            } else if (before !== false) {
+                this.upload(file)
+            }
+        }
+    },
+
+    upload(file) {
         this.props.onStart(this.getFileForMultiple(file));
         const formNode = this.getFormNode();
         const dataSpan = this.getFormDataNode();
@@ -88,6 +106,9 @@ const IframeUploader = React.createClass({
         }
         dataSpan.innerHTML = inputs.join('');
         this.disabledIframe();
+        if (file.action) {
+            formNode.action = file.action;
+        }
         formNode.submit();
         dataSpan.innerHTML = '';
     },

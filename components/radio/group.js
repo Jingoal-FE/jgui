@@ -19,6 +19,7 @@ function getCheckedValue(children) {
 export default class RadioGroup extends React.Component {
   static defaultProps = {
     prefixCls: 'jgui-radio-group',
+    orientation: 'horizontal',
     disabled: false,
     onChange() {
     },
@@ -82,6 +83,7 @@ export default class RadioGroup extends React.Component {
     const classString = classNames({
       [props.prefixCls]: true,
       [`${props.prefixCls}-${props.size}`]: props.size,
+      [`${props.prefixCls}-${props.orientation}`]: props.orientation,
     });
     return <div className={classString} style={props.style}>{children}</div>;
   }

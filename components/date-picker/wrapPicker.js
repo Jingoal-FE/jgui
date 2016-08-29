@@ -1,5 +1,4 @@
-import { PropTypes } from 'react';
-import * as React from 'react';
+import React, { PropTypes } from 'react';
 import TimePickerPanel from 'rc-time-picker/lib/module/Panel';
 import DateTimeFormat from 'gregorian-calendar-format';
 import GregorianCalendar from 'gregorian-calendar';

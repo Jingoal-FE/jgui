@@ -1,6 +1,6 @@
 {
   "name": "jgui",
-  "version": "0.0.3-beta9",
+  "version": "0.0.5-beta6",
   "keywords": [
     "react",
     "react-component",
@@ -56,7 +56,8 @@
     "react-addons-pure-render-mixin": "^15.0.0",
     "react-slick": "~0.12.0",
     "shallowequal": "^0.2.2",
-    "warning": "~3.0.0"
+    "warning": "~3.0.0",
+    "react-native": "~0.29.1"
   },
   "devDependencies": {
     "antd-tools": "^0.9.0",

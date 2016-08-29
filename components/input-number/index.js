@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import RcInputNumber from 'rc-input-number';
+import RcInputNumber from './rc-input-number';
 import splitObject from '../_util/splitObject';
 
 export default class InputNumber extends React.Component {

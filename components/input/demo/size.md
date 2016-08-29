@@ -14,7 +14,7 @@ ReactDOM.render(
   <div className="example-input">
     <Input size="large" placeholder="大尺寸" />
     <Input placeholder="默认尺寸" />
-    <Input size="small" placeholder="小尺寸" />
+    <Input size="small" placeholder="小尺寸" maxLength="10" />
   </div>
 , mountNode);
 ````

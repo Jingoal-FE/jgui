@@ -150,7 +150,6 @@ export default class Input extends Component {
       // specify either the value prop, or the defaultValue prop, but not both.
       delete props.defaultValue;
     }
-
     switch (props.type) {
       case 'textarea':
         return (

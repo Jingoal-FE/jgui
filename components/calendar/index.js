@@ -9,7 +9,9 @@ import assign from 'object-assign';
 function noop() { return null; }
 
 function zerofixed(v) {
-  if (v < 10) return `0${v}`;
+  if (v < 10) {
+    return `0${v}`;
+  }
   return `${v}`;
 }
 
@@ -22,7 +24,7 @@ export default class Calendar extends React.Component {
     prefixCls: PREFIX_CLS,
     onPanelChange: noop,
     mode: 'month',
-  }
+  };
 
   static propTypes = {
     monthCellRender: PropTypes.func,
@@ -34,11 +36,11 @@ export default class Calendar extends React.Component {
     style: PropTypes.object,
     onPanelChange: PropTypes.func,
     value: PropTypes.instanceOf(Date),
-  }
+  };
 
   static contextTypes = {
     antLocale: PropTypes.object,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -71,7 +73,7 @@ export default class Calendar extends React.Component {
     }
     // 统一合并为完整的 Locale
     const result = assign({}, locale, props.locale);
-    result.lang = assign({}, locale.lang,props.locale.lang);
+    result.lang = assign({}, locale.lang, props.locale.lang);
     return result;
   }
 
@@ -79,28 +81,28 @@ export default class Calendar extends React.Component {
     const prefixCls = this.props.prefixCls;
     const month = value.getMonth();
     return (
-      <div className={`${prefixCls}-month`}>
-        <div className={`${prefixCls}-value`}>
-          {locale.format.shortMonths[month]}
+        <div className={`${prefixCls}-month`}>
+          <div className={`${prefixCls}-value`}>
+            {locale.format.shortMonths[month]}
+          </div>
+          <div className={`${prefixCls}-content`}>
+            {this.props.monthCellRender(value)}
+          </div>
         </div>
-        <div className={`${prefixCls}-content`}>
-          {this.props.monthCellRender(value)}
-        </div>
-      </div>
     );
   }
 
   dateCellRender = (value) => {
     const prefixCls = this.props.prefixCls;
     return (
-      <div className={`${prefixCls}-date`}>
-        <div className={`${prefixCls}-value`}>
-          {zerofixed(value.getDayOfMonth())}
+        <div className={`${prefixCls}-date`}>
+          <div className={`${prefixCls}-value`}>
+            {zerofixed(value.getDayOfMonth())}
+          </div>
+          <div className={`${prefixCls}-content`}>
+            {this.props.dateCellRender(value)}
+          </div>
         </div>
-        <div className={`${prefixCls}-content`}>
-          {this.props.dateCellRender(value)}
-        </div>
-      </div>
     );
   }
 
@@ -132,28 +134,28 @@ export default class Calendar extends React.Component {
     }
 
     return (
-      <div className={cls} style={style}>
-        <Header
-          fullscreen={fullscreen}
-          type={type}
-          value={value}
-          locale={locale.lang}
-          prefixCls={prefixCls}
-          onTypeChange={this.setType}
-          onValueChange={this.setValue}
-        />
-        <FullCalendar
-          {...props}
-          Select={noop}
-          locale={locale.lang}
-          type={type}
-          prefixCls={prefixCls}
-          showHeader={false}
-          value={value}
-          monthCellRender={this.monthCellRender}
-          dateCellRender={this.dateCellRender}
-        />
-      </div>
+        <div className={cls} style={style}>
+          <Header
+              fullscreen={fullscreen}
+              type={type}
+              value={value}
+              locale={locale.lang}
+              prefixCls={prefixCls}
+              onTypeChange={this.setType}
+              onValueChange={this.setValue}
+          />
+          <FullCalendar
+              {...props}
+              Select={noop}
+              locale={locale.lang}
+              type={type}
+              prefixCls={prefixCls}
+              showHeader={false}
+              value={value}
+              monthCellRender={this.monthCellRender}
+              dateCellRender={this.dateCellRender}
+          />
+        </div>
     );
   }
 }

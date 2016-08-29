@@ -7,6 +7,7 @@ import assign from 'object-assign';
 import Icon from '../icon';
 
 export default function createPicker(TheCalendar) {
+  // use class typescript error
   const CalenderWrapper = React.createClass({
 
     getInitialState() {

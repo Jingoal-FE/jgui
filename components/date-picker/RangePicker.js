@@ -89,7 +89,6 @@ export default class RangePicker extends React.Component {
         ? props.startPlaceholder : locale.lang.rangePlaceholder[0];
     const endPlaceholder = ('endPlaceholder' in props)
         ? props.endPlaceholder : locale.lang.rangePlaceholder[1];
-
     const calendar = (
         <RangeCalendar
             prefixCls="jgui-calendar"

@@ -5,6 +5,7 @@ import defaultLocale from './locale/zh_CN';
 import classNames from 'classnames';
 import GregorianCalendar from 'gregorian-calendar';
 import assign from 'object-assign';
+
 export default class TimePicker extends React.Component {
   static defaultProps = {
     format: 'HH:mm:ss',
@@ -22,11 +23,11 @@ export default class TimePicker extends React.Component {
     hideDisabledOptions: false,
     placement: 'bottomLeft',
     transitionName: 'slide-up',
-  }
+  };
 
   static contextTypes = {
     antLocale: React.PropTypes.object,
-  }
+  };
 
   getFormatter() {
     return new DateTimeFormat(this.props.format, this.getLocale().format);
@@ -66,8 +67,8 @@ export default class TimePicker extends React.Component {
 
   handleChange = (value) => {
     this.props.onChange(
-      value ? new Date(value.getTime()) : null,
-      value ? this.getFormatter().format(value) : '',
+        value ? new Date(value.getTime()) : null,
+        value ? this.getFormatter().format(value) : '',
     );
   }
 
@@ -84,7 +85,7 @@ export default class TimePicker extends React.Component {
     const locale = this.getLocale();
     const props = assign({}, this.props);
     props.placeholder = ('placeholder' in this.props)
-      ? props.placeholder : locale.placeholder;
+        ? props.placeholder : locale.placeholder;
     if (props.defaultValue) {
       props.defaultValue = this.parseTimeFromValue(props.defaultValue);
     } else {
@@ -105,13 +106,13 @@ export default class TimePicker extends React.Component {
     }
 
     return (
-      <RcTimePicker
-        {...props}
-        className={className}
-        locale={locale}
-        formatter={this.getFormatter()}
-        onChange={this.handleChange}
-      />
+        <RcTimePicker
+            {...props}
+            className={className}
+            locale={locale}
+            formatter={this.getFormatter() }
+            onChange={this.handleChange}
+        />
     );
   }
 }

@@ -13,7 +13,7 @@ export default class Header extends React.Component {
     yearSelectTotal: 20,
     onValueChange: noop,
     onTypeChange: noop,
-  }
+  };
 
   static propTypes = {
     value: PropTypes.object,
@@ -25,7 +25,7 @@ export default class Header extends React.Component {
     prefixCls: PropTypes.string,
     selectPrefixCls: PropTypes.string,
     type: PropTypes.string,
-  }
+  };
 
   getYearSelectElement(year) {
     const { yearSelectOffset, yearSelectTotal, locale, prefixCls, fullscreen } = this.props;
@@ -38,17 +38,17 @@ export default class Header extends React.Component {
       options.push(<Option key={`${index}`}>{index + suffix}</Option>);
     }
     return (
-      <Select
-        style={{ width: 75 }}
-        size={fullscreen ? null : 'small'}
-        dropdownMatchSelectWidth={false}
-        dropdownMenuStyle={{ minWidth: 103 }}
-        className={`${prefixCls}-year-select`}
-        onChange={this.onYearChange}
-        value={String(year)}
-      >
-        {options}
-      </Select>
+        <Select
+            style={{ width: 75 }}
+            size={fullscreen ? null : 'small'}
+            dropdownMatchSelectWidth={false}
+            dropdownMenuStyle={{ minWidth: 103 }}
+            className={`${prefixCls}-year-select`}
+            onChange={this.onYearChange}
+            value={String(year)}
+        >
+          {options}
+        </Select>
     );
   }
 
@@ -63,17 +63,17 @@ export default class Header extends React.Component {
     }
 
     return (
-      <Select
-        style={{ minWidth: 70 }}
-        dropdownMenuStyle={{ minWidth: 125 }}
-        size={fullscreen ? null : 'small'}
-        dropdownMatchSelectWidth={false}
-        className={`${prefixCls}-month-select`}
-        value={String(month)}
-        onChange={this.onMonthChange}
-      >
-        {options}
-      </Select>
+        <Select
+            style={{ minWidth: 70 }}
+            dropdownMenuStyle={{ minWidth: 125 }}
+            size={fullscreen ? null : 'small'}
+            dropdownMatchSelectWidth={false}
+            className={`${prefixCls}-month-select`}
+            value={String(month)}
+            onChange={this.onMonthChange}
+        >
+          {options}
+        </Select>
     );
   }
 
@@ -98,18 +98,18 @@ export default class Header extends React.Component {
     const yearSelect = this.getYearSelectElement(value.getYear());
     const monthSelect = type === 'date' ? this.getMonthSelectElement(value.getMonth()) : null;
     const typeSwitch = (
-      <Group onChange={this.onTypeChange} value={type}>
-        <Button value="date">{locale.month}</Button>
-        <Button value="month">{locale.year}</Button>
-      </Group>
+        <Group onChange={this.onTypeChange} value={type}>
+          <Button value="date">{locale.month}</Button>
+          <Button value="month">{locale.year}</Button>
+        </Group>
     );
 
     return (
-      <div className={`${prefixCls}-header`}>
-        {yearSelect}
-        {monthSelect}
-        {typeSwitch}
-      </div>
+        <div className={`${prefixCls}-header`}>
+          {yearSelect}
+          {monthSelect}
+          {typeSwitch}
+        </div>
     );
   }
 }
