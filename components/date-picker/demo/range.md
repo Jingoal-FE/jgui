@@ -26,6 +26,6 @@ function onChange(value, dateString) {
 ReactDOM.render(<div>
   <RangePicker style={{ width: 184 }} onChange={onChange} />
   <br />
-  <RangePicker showTime={{ format: 'HH:ss'}} format="yyyy/MM/dd HH:mm" onChange={onChange} />
+  <RangePicker showTime={{ format: 'HH:mm'}} format="yyyy/MM/dd HH:mm" onChange={onChange} />
 </div>, mountNode);
 ````

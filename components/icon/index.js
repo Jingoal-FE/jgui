@@ -1,18 +1,26 @@
 import * as React from 'react';
 
 let typeMap = {
+    'color-bmp': 'color-image',
     'color-jpg': 'color-image',
     'color-jpeg': 'color-image',
     'color-png': 'color-image',
     'color-gif': 'color-image',
     'color-docx': 'color-doc',
     'color-xlsx': 'color-xls',
-    'color-pptx': 'color-ppt'
+    'color-pptx': 'color-ppt',
+    'color-mp3': 'color-music',
+    'color-wma': 'color-music',
+    'color-wav': 'color-music',
+    'color-acc': 'color-music',
+    'color-mod': 'color-music',
+    'color-htm': 'color-html',
+    'color-tar': 'color-zip',
 }
 export default props => {
     let {type, className = ''} = props;
     if (type.indexOf('color-') === 0) {
-        let realType = typeMap[type];
+        let realType = typeMap[type.toLowerCase()];
         type = realType || type;
         let className = `jgicon jgicon-color jgicon-${type}`;
         return (

@@ -17,11 +17,11 @@ function T() {
 function fileToObject(file) {
   return {
     lastModified: file.lastModified,
-    lastModifiedDate: file.lastModifiedDate,
+    lastModifiedDate: file.lastModifiedDate || file.modificationdate,
     name: file.filename || file.name,
     size: file.size,
     type: file.type,
-    uid: file.uid,
+    uid: file.uid || file.id,
     response: file.response,
     error: file.error,
     percent: 0,
@@ -103,10 +103,10 @@ export default class Upload extends React.Component {
       file: targetItem,
       fileList: nextFileList,
     });
-    // fix ie progress
-    if (!window.FormData) {
-      this.autoUpdateProgress(0, targetItem);
-    }
+    // // fix ie progress
+    // if (!window.FormData) {
+    //   this.autoUpdateProgress(0, targetItem);
+    // }
   }
 
   autoUpdateProgress(percent, file) {

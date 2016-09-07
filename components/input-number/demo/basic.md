@@ -13,6 +13,6 @@ function onChange(value) {
 }
 
 ReactDOM.render(
-  <InputNumber min={-22} max={10} defaultValue={3} onChange={onChange} />
+  <InputNumber min={-22} max={10} onChange={onChange} placeholder="请输入" />
 , mountNode);
 ````

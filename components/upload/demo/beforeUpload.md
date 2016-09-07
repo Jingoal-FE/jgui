@@ -12,6 +12,7 @@ import { Upload, Button, Icon, message } from 'jgui';
 
 const props = {
   multiple: true,
+  domain: 'localhost',
   beforeUpload(files) {
   /*
     const isJPG = file.type === 'image/jpeg';

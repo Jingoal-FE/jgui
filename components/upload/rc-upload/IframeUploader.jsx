@@ -26,6 +26,7 @@ const IframeUploader = React.createClass({
         ]),
         action: PropTypes.string,
         name: PropTypes.string,
+        domain: '',
     },
 
     getInitialState() {
@@ -185,17 +186,18 @@ const IframeUploader = React.createClass({
         const iframeNode = this.getIframeNode();
         let win = iframeNode.contentWindow;
         let doc;
-        this.domain = this.domain || '';
+        this.domain = this.props.domain || this.domain ||'';
         this.initIframeSrc();
         try {
             doc = win.document;
         } catch (e) {
-            this.domain = document.domain;
+            this.domain = this.props.domain || document.domain;
             this.initIframeSrc();
             win = iframeNode.contentWindow;
             doc = win.document;
         }
         doc.open('text/html', 'replace');
+
         doc.write(this.getIframeHTML(this.domain));
         doc.close();
         this.getFormInputNode().onchange = this.onChange;

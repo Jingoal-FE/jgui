@@ -1,13 +1,20 @@
 import React from 'react';
-import {DatePicker} from 'jgui';
+import RcCalendar from 'rc-calendar';
+import MonthCalendar from 'rc-calendar/lib/MonthCalendar';
+import createPicker from './createPicker';
+import wrapPicker from './wrapPicker';
+
+const DatePicker = wrapPicker(createPicker(RcCalendar));
+const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'yyyy-MM');
 
 export default class RangeCalendar extends React.Component {
     static defaultProps = {
         prefixCls: 'jgui-range-calender',
+        justMonth: false,
         defaultValue: [],
         separator: '~',
         width: 180,
-        showTime: true,
+        showTime: false,
         format: 'yyyy-MM-dd HH:mm:ss',
         startTimePlaceHolder: '开始时间',
         endTimePlaceHolder: '结束时间',
@@ -43,14 +50,14 @@ export default class RangeCalendar extends React.Component {
         if (!startValue || !this.state.endValue) {
             return false;
         }
-        return startValue.getTime() >= this.state.endValue.getTime();
+        return startValue.getTime() > this.state.endValue.getTime();
     }
 
     disabledEndDate(endValue) {
         if (!endValue || !this.state.startValue) {
             return false;
         }
-        return endValue.getTime() <= this.state.startValue.getTime();
+        return endValue.getTime() < this.state.startValue.getTime();
     }
 
     handleChange(field, value) {
@@ -95,13 +102,17 @@ export default class RangeCalendar extends React.Component {
     }
 
     render() {
-        const {startTimePlaceHolder, endTimePlaceHolder, separator, prefixCls, format, width, showTime} = this.props;
+        const {startTimePlaceHolder, endTimePlaceHolder, separator, prefixCls, format, width, showTime, justMonth ,disabled} = this.props;
         const {startValue, endValue, endOpen} = this.state;
+        let Picker = justMonth ? MonthPicker : DatePicker;
+        let showTimeProps = !justMonth && showTime ? { showTime } : {};
+        console.log(showTimeProps)
         return (
             <div className={`${prefixCls}`}>
-                <DatePicker
+                <Picker
+                    disabled={disabled}
                     disabledDate={this.disabledStartDate.bind(this)}
-                    showTime={showTime}
+                    {...showTimeProps}
                     width={width}
                     format={format}
                     value={startValue}
@@ -110,9 +121,10 @@ export default class RangeCalendar extends React.Component {
                     toggleOpen={this.handleStartToggle.bind(this)}
                 />
                 <span className={`${prefixCls}-separator`}> {separator} </span>
-                <DatePicker
+                <Picker
+                    disabled={disabled}
                     disabledDate={this.disabledEndDate.bind(this)}
-                    showTime={showTime}
+                    {...showTimeProps}
                     width={width}
                     format={format}
                     value={endValue}

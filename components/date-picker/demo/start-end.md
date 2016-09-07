@@ -19,6 +19,6 @@ import { DatePicker } from 'jgui';
 const RangeCalendar = DatePicker.RangeCalendar;
 
 ReactDOM.render(
-  <RangeCalendar showTime={false} defaultValue={[new Date(), new Date()]} onChange={(date, dateString) => { console.log(date, dateString)}}/>
+  <RangeCalendar format="yyyy-MM-dd"  defaultValue={[new Date(), new Date()]} onChange={(date, dateString) => { console.log(date, dateString)}}/>
 , mountNode);
 ````

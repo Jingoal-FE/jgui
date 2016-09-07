@@ -148,6 +148,7 @@ const InputNumber = React.createClass({
             max={props.max}
             min={props.min}
             name={props.name}
+            placeholder={props.placeholder || ''}
             onChange={this.onChange}
             ref="input"
             value={inputDisplayValue}

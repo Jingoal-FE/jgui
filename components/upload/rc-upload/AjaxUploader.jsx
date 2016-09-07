@@ -18,8 +18,6 @@ const AjaxUploader = React.createClass({
         withCredentials: PropTypes.bool,
     },
 
-    secondAction: '',
-
     getInitialState() {
         return {
             disabled: false,

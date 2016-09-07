@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import AjaxUpload from './AjaxUploader';
-import IframeUpload from './IframeUploader';
+import FlashUploader from './FlashUploader';
 
 function empty() {
 }
@@ -65,7 +65,7 @@ const Upload = React.createClass({
         }
     },
     getComponent() {
-        return typeof FormData !== 'undefined' ? AjaxUpload : IframeUpload;
+        return typeof FormData !== 'undefined' ? AjaxUpload : FlashUploader;
     },
 
     render() {
