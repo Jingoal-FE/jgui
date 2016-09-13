@@ -92,4 +92,6 @@ export default function upload(option) {
         }
     }
     xhr.send(formData);
+
+    return xhr;
 }

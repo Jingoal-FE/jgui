@@ -3,7 +3,6 @@
 @mixin jguiTreeSwitcherIcon() {
   position: relative;
   &:after {
-    @include iconfont-size-under-12px(6px);
     content: '\ea21';
     display: inline-block;
     font-family: 'jgicon';

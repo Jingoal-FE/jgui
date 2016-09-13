@@ -72,6 +72,7 @@ export default class Upload extends React.Component {
     showUploadList: true,
     listType: 'text', // or pictrue
     className: '',
+    deletedIds: null,
   }
 
   constructor(props) {
@@ -156,7 +157,7 @@ export default class Upload extends React.Component {
     let targetItem = getFileItem(file, fileList);
     if (!targetItem) return;
     targetItem.percent = e.percent;
-    this.onChange({
+    return this.onChange({
       event: e,
       file: targetItem,
       fileList: this.state.fileList,
@@ -183,7 +184,7 @@ export default class Upload extends React.Component {
     if (fileList) {
       this.onChange({
         file,
-        fileList,
+        fileList, 
       });
     }
   }
@@ -209,7 +210,7 @@ export default class Upload extends React.Component {
     this.setState({
       fileList: info.fileList,
     });
-    this.props.onChange(info);
+    return this.props.onChange(info);
   }
 
   componentWillReceiveProps(nextProps) {

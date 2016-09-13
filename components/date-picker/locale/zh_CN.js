@@ -4,10 +4,20 @@ import TimePickerLocale from '../../time-picker/locale/zh_CN';
 import assign from 'object-assign';
 // 统一合并为完整的 Locale
 const locale = assign({}, GregorianCalendarLocale);
-locale.lang = assign({
-  placeholder: '请选择日期',
-  rangePlaceholder: ['开始日期', '结束日期'],
-}, CalendarLocale);
+locale.lang = assign(
+    {
+        placeholder: '请选择日期',
+        rangePlaceholder: ['开始日期', '结束日期'],
+    },
+    CalendarLocale,
+    {
+        previousYear: '上一年',
+        nextYear: '下一年',
+        previousMonth: '上个月',
+        nextMonth: '下个月',
+        monthSelect: '',
+    }
+);
 
 locale.timePickerLocale = assign({}, TimePickerLocale);
 

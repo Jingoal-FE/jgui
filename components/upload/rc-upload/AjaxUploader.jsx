@@ -5,6 +5,7 @@ import uid from './uid';
 const AjaxUploader = React.createClass({
     propTypes: {
         component: PropTypes.string,
+        deletedIds: PropTypes.array,
         style: PropTypes.object,
         prefixCls: PropTypes.string,
         multiple: PropTypes.bool,
@@ -121,7 +122,7 @@ const AjaxUploader = React.createClass({
             data = data(file);
         }
 
-        request({
+        let xhr = request({
             action: file.action || props.action,
             filename: props.name,
             file: file,
@@ -129,7 +130,10 @@ const AjaxUploader = React.createClass({
             headers: props.headers,
             withCredentials: props.withCredentials,
             onProgress: e => {
-                props.onProgress(e, file);
+                if (props.onProgress(e, file) === false) {
+                    xhr.abort();
+                    this._reset();
+                }
             },
             onSuccess: ret => {
                 props.onSuccess(ret, file);

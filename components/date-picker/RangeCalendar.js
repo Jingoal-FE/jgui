@@ -106,7 +106,7 @@ export default class RangeCalendar extends React.Component {
         const {startValue, endValue, endOpen} = this.state;
         let Picker = justMonth ? MonthPicker : DatePicker;
         let showTimeProps = !justMonth && showTime ? { showTime } : {};
-        console.log(showTimeProps)
+
         return (
             <div className={`${prefixCls}`}>
                 <Picker

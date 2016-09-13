@@ -1,27 +1,44 @@
 import * as React from 'react';
+import lodash from 'lodash';
 
-let typeMap = {
-    'color-bmp': 'color-image',
-    'color-jpg': 'color-image',
-    'color-jpeg': 'color-image',
-    'color-png': 'color-image',
-    'color-gif': 'color-image',
-    'color-docx': 'color-doc',
-    'color-xlsx': 'color-xls',
-    'color-pptx': 'color-ppt',
-    'color-mp3': 'color-music',
-    'color-wma': 'color-music',
-    'color-wav': 'color-music',
-    'color-acc': 'color-music',
-    'color-mod': 'color-music',
-    'color-htm': 'color-html',
-    'color-tar': 'color-zip',
-}
+let fileicons = {
+    'doc': ['doc', 'docx', 'wps', 'dot', 'dotm', 'wpt'],
+    'txt': ['txt'],
+    'xls': ['xls', 'xlsx', 'et', 'xlt', 'xltx', 'ett', 'csv'],
+    'pdf': ['pdf'],
+    'ppt': ['ppt', 'pptx', 'dps', 'pot', 'potx', 'dpt'],
+    'music': ['mp3'],
+    'apk': ['apk'],
+    'zip': ['zip', 'tar', 'gz'],
+    'html': ['html'],
+    'java': ['java'],
+    'image': ['jpg', 'jpeg', 'gif', 'png'],
+    'video': ['mp4', 'avi', 'mkv'],
+    'damage': ['iso'],
+    'rar': ['rar']
+};
+
 export default props => {
     let {type, className = ''} = props;
     if (type.indexOf('color-') === 0) {
-        let realType = typeMap[type.toLowerCase()];
-        type = realType || type;
+        for (let key in fileicons) {
+            let found = false;
+            if (fileicons.hasOwnProperty(key)) {
+                let item = fileicons[key];
+                let ext = type.split('-')[1];
+                for (let i = 0, l = item.length; i < l; i++) {
+                    if (item[i] === ext) {
+                        type = `color-${key}`;
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            if (found) {
+                break;
+            }
+        }
+
         let className = `jgicon jgicon-color jgicon-${type}`;
         return (
             <span className={className}>
