@@ -92,7 +92,7 @@ const Demo = React.createClass({
     });
     const treeNodes = loop(this.state.treeData);
     return (
-      <Tree onSelect={this.onSelect} loadData={this.onLoadData}>
+      <Tree onSelect={this.onSelect} loadData={this.onLoadData} checkedKeys={['0-1-1-0']} checkable={true}>
         {treeNodes}
       </Tree>
     );

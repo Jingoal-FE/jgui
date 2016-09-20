@@ -24,7 +24,7 @@
 
 // support rotate for all browsers
 @mixin cross-rotate($degrees) {
-  @include rotate($degrees);
+  @include ie-rotate($degrees);
   @include ie-rotate-via-degrees($degrees);
 }
 

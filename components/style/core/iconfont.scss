@@ -218,7 +218,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix} .path3:before {
   content: "\ea5d";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 
 .#{$iconfont-color-css-prefix}-mobile {
@@ -245,7 +246,9 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-java .path3:before {
   content: "\ea47";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
+
 }
 .#{$iconfont-color-css-prefix}-image .path1:before {
   content: "\ea48";
@@ -259,7 +262,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-image .path3:before {
   content: "\ea4a";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-txt .path1:before {
   content: "\ea4b";
@@ -273,7 +277,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-txt .path3:before {
   content: "\ea4d";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-music .path1:before {
   content: "\ea4e";
@@ -287,7 +292,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-music .path3:before {
   content: "\ea50";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-pdf .path1:before {
   content: "\ea51";
@@ -301,7 +307,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-pdf .path3:before {
   content: "\ea53";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-ppt .path1:before {
   content: "\ea54";
@@ -315,7 +322,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-ppt .path3:before {
   content: "\ea56";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-rar .path1:before {
   content: "\ea57";
@@ -348,7 +356,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-file-unknown .path3:before {
   content: "\ea5d";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-video .path1:before {
   content: "\ea5e";
@@ -362,7 +371,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-video .path3:before {
   content: "\ea60";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-xls .path1:before {
   content: "\ea61";
@@ -376,7 +386,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-xls .path3:before {
   content: "\ea63";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-zip .path1:before {
   content: "\ea64";
@@ -390,7 +401,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-zip .path3:before {
   content: "\ea66";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-apk .path1:before {
   content: "\ea67";
@@ -404,32 +416,38 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-apk .path3:before {
   content: "\ea69";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-apk .path4:before {
   content: "\ea6a";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-apk .path5:before {
   content: "\ea6b";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-apk .path6:before {
   content: "\ea6c";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-apk .path7:before {
   content: "\ea6d";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-apk .path8:before {
   content: "\ea6e";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-cloud_b .path1:before {
   content: "\ea6f";
@@ -438,7 +456,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-cloud_b .path2:before {
   content: "\ea70";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-cloud_b .path3:before {
   content: "\ea71";
@@ -448,7 +467,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-cloud_b .path4:before {
   content: "\ea72";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-cloud .path1:before {
   content: "\ea73";
@@ -457,7 +477,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-cloud .path2:before {
   content: "\ea74";
   margin-left: -0.9375em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-cloud .path3:before {
   content: "\ea75";
@@ -481,7 +502,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-damage .path3:before {
   content: "\ea79";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-doc .path1:before {
   content: "\ea7a";
@@ -495,7 +517,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-doc .path3:before {
   content: "\ea7c";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-folder .path1:before {
   content: "\ea7d";
@@ -504,7 +527,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-folder .path2:before {
   content: "\ea7e";
   margin-left: -0.9375em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-folder .path3:before {
   content: "\ea7f";
@@ -523,7 +547,8 @@ $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;
 .#{$iconfont-color-css-prefix}-html .path3:before {
   content: "\ea82";
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
+  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-ic_add .path1:before {
   content: "\ea83";
