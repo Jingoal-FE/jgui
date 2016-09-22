@@ -128,7 +128,9 @@ export default {
       return num;
     }
     const precision = this.getPrecision();
-    return Number(num).toFixed(Math.abs(precision));
+    let inputPrecision = num ? num.toString().split('.') : [];
+    inputPrecision = inputPrecision.length > 1 ? inputPrecision[1].length : 0;
+    return Number(num).toFixed(Math.min(inputPrecision, Math.abs(precision)));
   },
 
   upStep(val) {

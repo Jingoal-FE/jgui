@@ -28,7 +28,7 @@ export default class DropdownButton extends React.Component {
     });
     return (
         <ButtonGroup {...restProps} className={cls}>
-          <Button type={type} onClick={onClick}>{children}</Button>
+          <div type={type} className="jgui-btn" onClick={onClick}>{children}</div>
           <Dropdown align={align} overlay={overlay} trigger={trigger}>
             <Button type={type}>
               <Icon type="down" />

@@ -31,11 +31,25 @@ const FlashUploader = React.createClass({
         settings.file_types = props.fileTypes || '*.*';
         settings.flash_url = props.flashUrl;
         settings.button_image_url = props.buttonImageUrl;
-        settings.button_placeholder_id = props.buttonPlaceholderId;
-        settings.button_placeholder = props.buttonPlaceholder
-                                        || ReactDOM.findDOMNode(this.refs['uploader_container']).children[props.placeholderIndex || 0];
         settings.button_width = props.buttonWidth || settings.button_width;
         settings.button_height = props.buttonHeight || settings.button_height;
+        settings.button_placeholder = props.buttonPlaceholder;
+
+        if (!settings.button_placeholder) {
+            let childNodes = ReactDOM.findDOMNode(this.refs['uploader_container']).childNodes;
+            let placeholderIndex = props.placeholderIndex || 0;
+            let index = 0;
+            for(var i = 0, len = childNodes.length; i < len; i++) {
+                let childNode = childNodes[i];
+                if (childNode.nodeType === 1) {
+                    if (index === placeholderIndex) {
+                        settings.button_placeholder = childNode;
+                        break;
+                    }
+                    index++;
+                }
+            }
+        }
 
         this.uploader  = new SWFUpload(settings);
     },

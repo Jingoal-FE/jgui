@@ -9,6 +9,7 @@ const MonthPicker = wrapPicker(createPicker(MonthCalendar), 'yyyy-MM');
 
 export default class RangeCalendar extends React.Component {
     static defaultProps = {
+        checkStrictly: true,
         prefixCls: 'jgui-range-calender',
         justMonth: false,
         defaultValue: [],
@@ -47,6 +48,9 @@ export default class RangeCalendar extends React.Component {
     }
 
     disabledStartDate(startValue) {
+        if (!this.props.checkStrictly) {
+            return false;
+        }
         if (!startValue || !this.state.endValue) {
             return false;
         }
@@ -54,6 +58,9 @@ export default class RangeCalendar extends React.Component {
     }
 
     disabledEndDate(endValue) {
+        if (!this.props.checkStrictly) {
+            return false;
+        }
         if (!endValue || !this.state.startValue) {
             return false;
         }
