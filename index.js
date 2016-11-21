@@ -26,9 +26,9 @@ req.keys().forEach((mod) => {
   }
 });
 
-if (process.env.NODE_ENV !== 'production') {
-  if (typeof console !== 'undefined' && console.warn) {
-    console.warn(`You are using prebuilt antd,
-please use https://github.com/ant-design/babel-plugin-antd to reduce app bundle size.`);
-  }
-}
+// if (process.env.NODE_ENV.toLowerCase() !== 'production') {
+//   if (typeof console !== 'undefined' && console.warn) {
+//     console.warn(`You are using prebuilt antd,
+// please use https://github.com/ant-design/babel-plugin-antd to reduce app bundle size.`);
+//   }
+// }

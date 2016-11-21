@@ -2,11 +2,11 @@
 // $icon-url： 字体源文件的地址
 @font-face {
   font-family: 'jgicon';
-  src:    url('#{$icon-url}.eot?t2eweb');
-  src:    url('#{$icon-url}.eot?t2eweb#iefix') format('embedded-opentype'),
-  url('#{$icon-url}.ttf?t2eweb') format('truetype'),
-  url('#{$icon-url}.woff?t2eweb') format('woff'),
-  url('#{$icon-url}.svg?t2eweb#icomoon') format('svg');
+  src:    url('~jgfe-lib/fonts/icomoon.eot?t2eweb');
+  src:    url('~jgfe-lib/fonts/icomoon.eot?t2eweb#iefix') format('embedded-opentype'),
+  url('~jgfe-lib/fonts/icomoon.ttf?t2eweb') format('truetype'),
+  url('~jgfe-lib/fonts/icomoon.woff?t2eweb') format('woff'),
+  url('~jgfe-lib/fonts/icomoon.svg?t2eweb#icomoon') format('svg');
 }
 
 .#{$iconfont-css-prefix} {

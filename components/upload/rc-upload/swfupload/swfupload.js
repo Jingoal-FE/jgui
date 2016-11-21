@@ -839,7 +839,6 @@ SWFUpload.prototype.cleanUp = function (movieElement) {
 
 /* This is a chance to do something before the browse window opens */
 SWFUpload.prototype.fileDialogStart = function () {
-    console.log('file_dialog_start_handler');
     this.queueEvent("file_dialog_start_handler");
 };
 
@@ -847,7 +846,6 @@ SWFUpload.prototype.fileDialogStart = function () {
 /* Called when a file is successfully added to the queue. */
 SWFUpload.prototype.fileQueued = function (file) {
     file = this.unescapeFilePostParams(file);
-    console.log('file_queued_handler');
     this.queueEvent("file_queued_handler", file);
 };
 
@@ -855,20 +853,17 @@ SWFUpload.prototype.fileQueued = function (file) {
 /* Handle errors that occur when an attempt to queue a file fails. */
 SWFUpload.prototype.fileQueueError = function (file, errorCode, message) {
     file = this.unescapeFilePostParams(file);
-    console.log('file_queue_error', [file, errorCode, message]);
     this.queueEvent("file_queue_error_handler", [file, errorCode, message]);
 };
 
 /* Called after the file dialog has closed and the selected files have been queued.
  You could call startUpload here if you want the queued files to begin uploading immediately. */
 SWFUpload.prototype.fileDialogComplete = function (numFilesSelected, numFilesQueued, numFilesInQueue) {
-    console.log('file_dialog_complete_handler');
     this.queueEvent("file_dialog_complete_handler", [numFilesSelected, numFilesQueued, numFilesInQueue]);
 };
 
 SWFUpload.prototype.uploadStart = function (file) {
     file = this.unescapeFilePostParams(file);
-    console.log('return_upload_start_handler');
     this.queueEvent("return_upload_start_handler", file);
 };
 
@@ -895,13 +890,11 @@ SWFUpload.prototype.returnUploadStart = function (file) {
 
 SWFUpload.prototype.uploadProgress = function (file, bytesComplete, bytesTotal) {
     file = this.unescapeFilePostParams(file);
-    console.log('upload_progress_handler');
     this.queueEvent("upload_progress_handler", [file, bytesComplete, bytesTotal]);
 };
 
 SWFUpload.prototype.uploadError = function (file, errorCode, message) {
     file = this.unescapeFilePostParams(file);
-    console.log('upload_error_handler', [file, errorCode, message]);
     this.queueEvent("upload_error_handler", [file, errorCode, message]);
 };
 

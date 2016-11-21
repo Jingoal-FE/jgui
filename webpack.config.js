@@ -30,6 +30,11 @@ module.exports = function (webpackConfig) {
         ),
     });
 
+    webpackConfig[0].module.loaders.push({
+        test: /\.(eot|svg|ttf|woff|woff2)\??.*$/,
+        loader: 'file'
+    });
+
     webpackConfig[0].plugins.push(new ExtractTextPlugin("[name].css"));
 
     return webpackConfig;
