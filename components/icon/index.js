@@ -20,23 +20,23 @@ let fileicons = {
 
 export default props => {
     let {type, className = ''} = props;
-    if (type.indexOf('color-') === 0) {
+    if (type.indexOf('color-file-') === 0) {
+        let found = false;
         for (let key in fileicons) {
-            let found = false;
             if (fileicons.hasOwnProperty(key)) {
                 let item = fileicons[key];
-                let ext = type.split('-')[1];
-                for (let i = 0, l = item.length; i < l; i++) {
-                    if (item[i] === ext) {
-                        type = `color-${key}`;
-                        found = true;
-                        break;
-                    }
+                let ext = type.split('-')[2];
+                if (item.indexOf(ext) >= 0) {
+                    type = `color-file-${key}`;
+                    found = true;
                 }
             }
             if (found) {
                 break;
             }
+        }
+        if (!found) {
+            type = 'color-file-unknown';
         }
 
         let className = `jgicon jgicon-color jgicon-${type}`;

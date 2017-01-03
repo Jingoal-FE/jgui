@@ -1,6 +1,9 @@
 {
   "name": "jgui",
-  "version": "0.1.7-beta2",
+  "version": "1.0.3",
+  "publishConfig" : {
+    "registry" : "http://npm.eff.com/repository/npm_jingoal/"
+  },
   "keywords": [
     "react",
     "react-component",
@@ -121,7 +124,7 @@
     "through2": "^2.0.1",
     "values.js": "^1.0.3",
     "webpack-babel-jest": "^1.0.4",
-    "jgfe-lib": "^0.0.1-beta1"
+    "jgfe-styles": "^1.0.0-alpha01"
   },
   "scripts": {
     "dist": "antd-tools run dist",
