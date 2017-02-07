@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 $rate-prefix-cls: jgui-rate;
 $rate-star-color: #f5a623;
@@ -11,7 +11,7 @@ $rate-star-color: #f5a623;
   font-size: 18px;
   display: inline-block;
   vertical-align: middle;
-  font-family: 'jgicon';
+  font-family: 'jguicon';
   font-weight: normal;
   font-style: normal;
 

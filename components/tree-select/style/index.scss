@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 @import "../../tree/style/mixin";
 @import "../../checkbox/style/mixin";
 
@@ -63,7 +63,7 @@ $select-tree-prefix-cls: jgui-select-tree;
         &:after {
           content: '\e6a1';
           display: inline-block;
-          font-family: 'jgicon';
+          font-family: 'jguicon';
           font-weight: bold;
           animation: loadingCircle 1s infinite linear;
           margin-top: 8px;

@@ -1,16 +1,17 @@
 // font-face
 // $icon-url： 字体源文件的地址
-@font-face {
-  font-family: 'jgicon';
-  src:    url('#{$jgui-icon-url}.eot?t2eweb');
-  src:    url('#{$jgui-icon-url}.eot?t2eweb#iefix') format('embedded-opentype'),
-  url('#{$jgui-icon-url}.ttf?t2eweb') format('truetype'),
-  url('#{$jgui-icon-url}.woff?t2eweb') format('woff'),
-  url('#{$jgui-icon-url}.svg?t2eweb#icomoon') format('svg');
-}
-
 .#{$iconfont-css-prefix} {
-  @include iconfont-mixin();
+  font-family: 'jguicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 $iconfont-color-css-prefix: #{$iconfont-css-prefix}-color;

@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 $menu-prefix-cls: jgui-menu;
 
@@ -182,7 +182,7 @@ $menu-prefix-cls: jgui-menu;
     }
 
     &-vertical > .#{$menu-prefix-cls}-submenu-title:after {
-      font-family: "jgicon" !important;
+      font-family: "jguicon" !important;
       font-style: normal;
       vertical-align: baseline;
       text-align: center;
@@ -197,7 +197,7 @@ $menu-prefix-cls: jgui-menu;
     }
 
     &-inline > .#{$menu-prefix-cls}-submenu-title:after {
-      font-family: "jgicon" !important;
+      font-family: "jguicon" !important;
       font-style: normal;
       vertical-align: baseline;
       text-align: center;

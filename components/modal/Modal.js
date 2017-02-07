@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Dialog from 'rc-dialog';
+import Dialog from 'rc-dialog-ie';
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import Button from '../button';
 

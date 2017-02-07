@@ -1,4 +1,5 @@
 @import "../../style/themes/default";
+@import "~jgfe-styles/mixins/index";
 @import "../../style/mixins/index";
 @import "../../input/style/mixin";
 
@@ -27,7 +28,7 @@ $select-prefix-cls: jgui-select;
   transition: color 0.3s ease, opacity 0.15s ease;
   &:before {
     display: block;
-    font-family: "jgicon" !important;
+    font-family: "jguicon" !important;
     content: "\e9d3";
   }
 
@@ -52,7 +53,7 @@ $select-prefix-cls: jgui-select;
 
   // arrow
   &-arrow {
-    @include iconfont-mixin();
+    @include jguiconfont-mixin();
     position: absolute;
     top: 50%;
     right: 8px;
@@ -300,7 +301,7 @@ $select-prefix-cls: jgui-select;
     }
 
     .#{$select-prefix-cls}-selection__choice__remove {
-      @include iconfont-mixin();
+      @include jguiconfont-mixin();
       color: #999;
       line-height: inherit;
       cursor: pointer;
@@ -473,7 +474,7 @@ $select-prefix-cls: jgui-select;
     .#{$select-prefix-cls}-dropdown-menu-item {
       &:after {
         content: '\e62e';
-        font-family: 'jgicon';
+        font-family: 'jguicon';
         color: transparent;
         @include iconfont-size-under-12px(10px);
         transition: all 0.2s ease;

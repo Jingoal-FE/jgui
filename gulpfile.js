@@ -16,18 +16,19 @@ gulp.task('compile', () => {
     const scss = gulp.src(['components/**/*.scss'])
     .pipe(through2.obj(function (file, encoding, next) {
         this.push(file.clone());
-        if (file.path.match(/\/style\/index\.scss/)) {
-            transformScss(file.path).then((css) => {
-                file.contents = new Buffer(css);
-                file.path = file.path.replace(/\.scss/, '.css');
-                this.push(file);
-                next();
-            }).catch((e) => {
-                console.error(e);
-            });
-        } else {
-            next();
-        }
+        // if (file.path.match(/\/style\/index\.scss/)) {
+        //     transformScss(file.path).then((css) => {
+        //         file.contents = new Buffer(css);
+        //         file.path = file.path.replace(/\.scss/, '.css');
+        //         this.push(file);
+        //         next();
+        //     }).catch((e) => {
+        //         console.error(e);
+        //     });
+        // } else {
+        //     next();
+        // }
+        next();
     }))
     .pipe(gulp.dest('lib'));
 

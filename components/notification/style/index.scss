@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 $notification-prefix-cls: jgui-notification;
 $notification-width: 335px;
@@ -77,7 +77,7 @@ $notification-margin-bottom: 10px;
     &-close-x:after {
       font-size: 12px;
       content: "\e62d";
-      font-family: "jgicon";
+      font-family: "jguicon";
       cursor: pointer;
     }
 

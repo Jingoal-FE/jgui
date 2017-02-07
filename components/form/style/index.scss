@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 @import "../../input/style/mixin";
 @import "../../button/style/mixin";
 @import "../../layout/style/mixin";
@@ -275,7 +275,7 @@ form {
     top: 0;
     right: 0;
     visibility: visible;
-    font-family: "jgicon" !important;
+    font-family: "jguicon" !important;
     @include square($input-height-lg);
     line-height: $input-height-lg;
     text-align: center;

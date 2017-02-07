@@ -1,4 +1,5 @@
 @import "../../style/themes/default";
+@import "~jgfe-styles/mixins/index";
 @import "../../style/mixins/index";
 @import "../../input/style/mixin";
 
@@ -45,7 +46,7 @@ $input-number-prefix-cls: jgui-input-number;
 
   &-handler-up-inner,
   &-handler-down-inner {
-    @include iconfont-mixin();
+    @include jguiconfont-mixin();
     line-height: 12px;
     user-select: none;
     position: absolute;

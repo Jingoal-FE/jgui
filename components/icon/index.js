@@ -55,6 +55,6 @@ export default props => {
             </span>
         )
     }else {
-        return <i {...props} className={`${className} jgicon jgicon-${type}`.trim()}/>
+        return <i {...props} className={`jgicon ${className} jgicon-${type}`.trim()}/>
     }
 };

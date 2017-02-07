@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 @import "../../input/style/mixin";
 
 $pagination-prefix-cls: jgui-pagination;
@@ -79,7 +79,7 @@ $pagination-prefix-cls: jgui-pagination;
         color: $primary-color;
         @include iconfont-size-under-12px(8px);
         letter-spacing: -1px;
-        font-family: "jgicon";
+        font-family: "jguicon";
       }
     }
 
@@ -137,7 +137,7 @@ $pagination-prefix-cls: jgui-pagination;
         display: block;
         height: 26px;
         line-height: 26px;
-        font-family: "jgicon";
+        font-family: "jguicon";
         text-align: center;
       }
 

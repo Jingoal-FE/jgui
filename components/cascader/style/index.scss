@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 $cascader-prefix-cls: jgui-cascader;
 
@@ -161,7 +161,7 @@ $cascader-prefix-cls: jgui-cascader;
       position: relative;
       &:after {
         content: '\e600';
-        font-family: 'jgicon';
+        font-family: 'jguicon';
         @include iconfont-size-under-12px(8px);
         color: #999;
         position: absolute;

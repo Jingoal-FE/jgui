@@ -1,4 +1,4 @@
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 @mixin jguiCheckboxFn($checkbox-prefix-cls: jgui-checkbox) {
   $checkbox-inner-prefix-cls: "#{$checkbox-prefix-cls}-inner";
@@ -190,7 +190,7 @@
   @media #{$ie8} {
     .#{$checkbox-prefix-cls}-checked .#{$checkbox-prefix-cls}-inner:before,
     .#{$checkbox-prefix-cls}-checked .#{$checkbox-prefix-cls}-inner:after {
-      font-family: 'jgicon';
+      font-family: 'jguicon';
       content: '\E62E';
       font-weight: bold;
       font-size: 8px;

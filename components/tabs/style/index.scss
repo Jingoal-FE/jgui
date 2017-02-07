@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 $tab-prefix-cls: jgui-tabs;
 
@@ -83,7 +83,7 @@ $tab-prefix-cls: jgui-tabs;
 
       &:before {
         display: block;
-        font-family: "jgicon" !important;
+        font-family: "jguicon" !important;
       }
     }
   }

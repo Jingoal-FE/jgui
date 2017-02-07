@@ -265,7 +265,7 @@
   }
 
   .#{$calendar-prefix-cls}-clear-btn:after {
-    @include iconfont-font("\e69d3");
+    @include jguiconfont-font("\e69d3");
     font-size: 12px;
     color: #ccc;
     display: inline-block;

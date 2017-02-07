@@ -1,5 +1,5 @@
 @import "../../style/themes/default";
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 $dropdown-prefix-cls: jgui-dropdown;
 
@@ -105,7 +105,7 @@ $dropdown-prefix-cls: jgui-dropdown;
     }
 
     &-submenu-title:after {
-      font-family: "jgicon" !important;
+      font-family: "jguicon" !important;
       position: absolute;
       content: "\ea2d";
       right: 15px;

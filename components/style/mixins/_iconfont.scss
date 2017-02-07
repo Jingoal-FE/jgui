@@ -1,35 +1,20 @@
-@mixin iconfont-mixin() {
-  font-family: 'jgicon' !important;
+@mixin jguiconfont-mixin() {
+  font-family: 'jguicon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin iconfont-font($content) {
-  font-family: 'jgicon';
+@mixin jguiconfont-font($content) {
+  font-family: 'jguicon';
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: $content;
-}
-
-// for iconfont font size
-// fix chrome 12px bug, support ie
-@mixin iconfont-size-under-12px($size, $rotate: 0deg) {
-  display: inline-block;
-  $font-scale: unit($size / $font-size-base);
-  font-size: $font-size-base;
-  font-size: $size \9; // ie8-9
-  transform: scale($font-scale) rotate($rotate);
-  @include ie-rotate-via-degrees($rotate);
-  :root & {
-    font-size: $font-size-base; // reset ie9 and above
-  }
 }

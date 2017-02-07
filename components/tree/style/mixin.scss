@@ -1,11 +1,11 @@
-@import "../../style/mixins/index";
+@import "~jgfe-styles/mixins/index";
 
 @mixin jguiTreeSwitcherIcon() {
   position: relative;
   &:after {
     content: '\ea21';
     display: inline-block;
-    font-family: 'jgicon';
+    font-family: 'jguicon';
     font-weight: bold;
     position: absolute;
     top: 0;
