@@ -156,6 +156,12 @@ const AjaxUploader = React.createClass({
     render() {
         const props = this.props;
         const Tag = this.props.component;
+        let input = document.createElement('input');
+        let webkitdirectory = props.directoryUpload && 'webkitdirectory' in input;
+        let otherProps = {};
+        if (webkitdirectory) {
+            otherProps.webkitDirectory = true;
+        }
         return (
             <Tag
                 onClick={this.onClick}
@@ -176,6 +182,7 @@ const AjaxUploader = React.createClass({
                     accept={props.accept}
                     multiple={this.props.multiple}
                     onChange={this.onChange}
+                    {...otherProps}
                 />
                 {props.children}
             </Tag>

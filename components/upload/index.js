@@ -20,6 +20,7 @@ function fileToObject(file) {
         lastModifiedDate: file.lastModifiedDate || file.modificationdate,
         name: file.filename || file.name,
         size: file.size,
+        filePath: file.webkitRelativePath || '',
         type: file.type,
         uid: file.uid || file.id,
         response: file.response,

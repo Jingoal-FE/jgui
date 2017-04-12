@@ -514,7 +514,6 @@ $iconfont-color-file-css-prefix: #{$iconfont-color-css-prefix}-file;
   content: "\ea7e";
   margin-left: -0.9375em;
   color: rgb(255, 255, 255);
-  @include opacity(0.7);
 }
 .#{$iconfont-color-css-prefix}-folder .path3:before {
   content: "\ea7f";

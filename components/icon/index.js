@@ -15,7 +15,8 @@ let fileicons = {
     'image': ['jpg', 'jpeg', 'gif', 'png'],
     'video': ['mp4', 'avi', 'mkv'],
     'damage': ['iso'],
-    'rar': ['rar']
+    'rar': ['rar'],
+    'jin': ['jin'],
 };
 
 export default props => {

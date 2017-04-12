@@ -1,6 +1,6 @@
 {
   "name": "jgui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "publishConfig" : {
     "registry" : "http://npm.eff.com/repository/npm_jingoal/"
   },
@@ -125,7 +125,8 @@
     "rucksack-css": "^0.8.6",
     "through2": "^2.0.1",
     "values.js": "^1.0.3",
-    "webpack-babel-jest": "^1.0.4"
+    "webpack-babel-jest": "^1.0.4",
+    "tinymce": "4.3.12"
   },
   "scripts": {
     "dist": "antd-tools run dist",
